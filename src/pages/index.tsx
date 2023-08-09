@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three'
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 
 const Home: React.FC = () => {
@@ -11,10 +13,12 @@ const Home: React.FC = () => {
         const canvas = canvasRef.current;
         if (canvas) {
             const scene = new THREE.Scene();
+            //サイズ
             const sizes = {
-                width:window.innerWidth,
-                height:window.innerHeight,
+                width: window.innerWidth,
+                height: window.innerHeight,
             }
+            //カメラ
             const camera = new THREE.PerspectiveCamera(
                 35,
                 sizes.width / sizes.height,
@@ -23,18 +27,22 @@ const Home: React.FC = () => {
             );
             camera.position.z = 6;
             scene.add(camera);
+            //レンダー
             const renderer = new THREE.WebGL1Renderer({
                 canvas:canvas,
                 alpha:true
             });
             renderer.setSize(sizes.width,sizes.height);
             renderer.setPixelRatio(window.devicePixelRatio);
+            //マテリアル
             const material = new THREE.MeshPhysicalMaterial({
                 color:"#3c94d7",
                 metalness:0.86,
                 roughness:0.37,
                 flatShading:true,
             });
+            
+            //メッシュ
             const mesh1 = new THREE.Mesh( new THREE.TorusGeometry(1,0.4,16,60),material);
             const mesh2 = new THREE.Mesh( new THREE.OctahedronGeometry(),material);
             const mesh3 = new THREE.Mesh( new THREE.TorusKnotGeometry(.8,.35,100,16),material);
@@ -45,6 +53,8 @@ const Home: React.FC = () => {
             mesh4.position.set(5,0,3);
             scene.add(mesh1,mesh2,mesh3,mesh4);
             const meshes = [mesh1,mesh2,mesh3,mesh4];
+
+            //パーティクル
             const particlesGeometry = new THREE.BufferGeometry();
             const particlesCount = 700;
             const positionArray = new Float32Array(particlesCount * 3);
@@ -55,15 +65,42 @@ const Home: React.FC = () => {
                 "position", 
                 new THREE.BufferAttribute(positionArray,3)
             );
+            //マテリアル
             const particlesMaterial = new THREE.PointsMaterial({
                 size: 0.025,
                 color: "#ffffff",
             });
             const particles = new THREE.Points(particlesGeometry,particlesMaterial);
             scene.add(particles);
+
+            //Fonts
+            const fontLoader = new FontLoader();
+            fontLoader.load("./fonts/helvetiker_regular.typeface.json", (font) => {
+                const textGeometry = new TextGeometry("PYLORHYTHM", {
+                    font: font,
+                    size: 0.2,
+                    height: 0.1,
+                    curveSegments: 5,
+                    bevelEnabled: true,
+                    bevelThickness: 0.02,
+                    bevelSize: 0.02,
+                    bevelOffset: 0,
+                    bevelSegments: 4,
+                });
+                textGeometry.center();
+                const textMaterial = new THREE.MeshNormalMaterial();
+                const text = new THREE.Mesh(textGeometry, textMaterial);
+                scene.add(text);
+            });
+           
+            //ライト
             const directionalLight = new THREE.DirectionalLight("#ffffff",4);
             directionalLight.position.set(.5,1,0)
             scene.add(directionalLight);
+
+            const controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+
             window.addEventListener("resize", ()=>{
                 //サイズをアップデート
                 sizes.width = window.innerWidth;
@@ -77,15 +114,17 @@ const Home: React.FC = () => {
                 renderer.setSize(sizes.width,sizes.height);
                 renderer.setPixelRatio(window.devicePixelRatio);
             });
+
             let speed = 0;
             let rotation = 0;
             window.addEventListener("wheel", (event) =>{
                 speed += event.deltaY * 0.0002;
             });
+            
             const rot = () => {
                 rotation += speed;
                 speed *= 0.93;
-                //ジオメトリ全体を回転
+                // ジオメトリ全体を回転
                 mesh1.position.x = 2 + 3.8 * Math.cos(rotation);
                 mesh1.position.z = -3 + 3.8 * Math.sin(rotation);
                 mesh2.position.x = 2 + 3.8 * Math.cos(rotation + Math.PI / 2);
@@ -97,6 +136,7 @@ const Home: React.FC = () => {
                 window.requestAnimationFrame(rot);
             };
             rot();
+            
             const cursor = {
                 x: 0,
                 y: 0,
@@ -107,18 +147,21 @@ const Home: React.FC = () => {
                 cursor.x = event.clientX / sizes.width - 0.5;
                 cursor.y = event.clientY / sizes.height - 0.5;
             });
+            
             const clock = new THREE.Clock();
             const animate = () =>{
                 renderer.render(scene,camera);
                 let getDeltaTime = clock.getDelta();
                 //メッシュを回転
-                for(const mesh of meshes){
+                for (const mesh of meshes) {
                     mesh.rotation.x += 0.1 * getDeltaTime;
                     mesh.rotation.y += 0.12 * getDeltaTime;
+                    controls.enabled = false;
                 }
                 //カーソルの位置におけるカメラの制御
                 camera.position.x += cursor.x * getDeltaTime * 1;
                 camera.position.y += -cursor.y * getDeltaTime * 1;
+                controls.update();
                 window.requestAnimationFrame(animate);
             };
             animate();
@@ -135,7 +178,6 @@ const Home: React.FC = () => {
             </Head>
             <div>
                 <canvas className="webgl" ref={canvasRef}></canvas>
-                    {/* その他のコンテンツ */}
             </div>
         </>
     );
