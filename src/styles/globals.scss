@@ -3,10 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-image: url(/space.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.imgWrap {
+    position: relative;
+    top: 40%;
+    /* leftはapp.jsで付加される */
+    // height: 40%;
+    width: 1px;
     overflow: hidden;
+    opacity: 0;
+    margin:100px auto 0;
+    &.active {
+        opacity: 1;
+        transition: opacity 1s, width 4s;
+        max-width: 500px;
+        width: 100%;
+    }
+    img{
+        width: 100%;
+        height: auto !important;
+        object-fit: cover;
+    }
 }
