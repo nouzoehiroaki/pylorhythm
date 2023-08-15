@@ -36,7 +36,9 @@ const Profile: React.FC = () => {
                 alpha:true
             });
             renderer.setSize(sizes.width,sizes.height);
-            renderer.setPixelRatio(window.devicePixelRatio);
+            //renderer.setPixelRatio(window.devicePixelRatio);
+            const devicePixelRatio = Math.min(2, window.devicePixelRatio);
+            renderer.setPixelRatio(devicePixelRatio);
 
             //ジオメトリ
             const boxGeometry = new THREE.BoxGeometry(5, 5, 5,10);
@@ -142,9 +144,15 @@ const Profile: React.FC = () => {
                 renderer.setSize(sizes.width,sizes.height);
                 renderer.setPixelRatio(window.devicePixelRatio);
             });
+
+            
+
+            
             const animate = () =>{
                 window.requestAnimationFrame(animate);
                 playScrollAnimation();
+                
+                
                 renderer.render(scene,camera);
             };
             animate();
