@@ -1,19 +1,22 @@
 import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three'
-import Head from 'next/head'
-import Link from 'next/link'; 
-import styles from '@/styles/Profile/Profile.module.scss'
-import Image from 'next/image'
-
+import * as THREE from 'three';
+import Head from 'next/head';
+import Link from 'next/link';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import SplitType from 'split-type';
+import styles from '@/styles/Profile/Profile.module.scss';
+gsap.registerPlugin(ScrollTrigger);
+gsap.config({
+    nullTargetWarn: false,
+});
 const Profile: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    //three.js
     useEffect(() => {
         const canvas = canvasRef.current;
         if (canvas) {
             const scene = new THREE.Scene();
-            const textureLoader = new THREE.TextureLoader();
-            const bgTexture = textureLoader.load("space.jpg");
-            scene.background = bgTexture;
             //サイズ
             const sizes = {
                 width: window.innerWidth,
@@ -21,7 +24,7 @@ const Profile: React.FC = () => {
             }
             //カメラ
             const camera = new THREE.PerspectiveCamera(
-                55,
+                50,
                 sizes.width / sizes.height,
                 0.1,
                 100
@@ -125,9 +128,7 @@ const Profile: React.FC = () => {
                 (document.documentElement.scrollHeight - 
                 document.documentElement.clientHeight)) * 100;
             }
-
             
-
             window.addEventListener("resize", ()=>{
                 //サイズをアップデート
                 sizes.width = window.innerWidth;
@@ -149,33 +150,75 @@ const Profile: React.FC = () => {
             animate();
         }
     }, []);
-    
-    useEffect(() =>{
-        let imagesItems = Array.from(document.querySelectorAll(".imgWrap"));
-        let title = Array.from(document.querySelectorAll(".title"));
-        let message = Array.from(document.querySelectorAll(".message"));
-        console.log(imagesItems);
-        console.log(title);
-
-        //具体的にいつ発動させるのかを決めるオプション
-        let options = {
-            rootMargin: "0px", //デフォルトで０.marginとほぼ同じ。
-            threshold: 0.5, // 閾値は0.2。これが１になると完全に画面におさまってから発動する
-        };
-        let setItemActive = (entries: IntersectionObserverEntry[]) =>{
-            console.log(entries);
-            entries.map((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                } else {
-                    entry.target.classList.remove("active");
-                }
-            });
-        };
-        let observer = new IntersectionObserver(setItemActive, options); //交差の監視して、閾値を過ぎたらコールバック関数が呼ばれる
-        imagesItems.forEach((item) => {
-            observer.observe(item);
+    //見出し h1 出現
+    useEffect(() => {
+        const text = SplitType.create('.title');
+        gsap.from(text.chars, {
+            opacity: 0,
+            y: 100,
+            ease: "back",
+            duration: 1,
+            stagger: 0.1
         });
+    }, []);
+    //h2 p スクロールアニメ
+    useEffect(() => {
+        const setAnimation = () => {
+            const h2Elements = document.querySelectorAll('h2');
+            h2Elements.forEach((element) => {
+                gsap.fromTo(
+                    element,
+                    {
+                        opacity: 0,
+                        y: 10,
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 2,
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 60%',
+                            end: 'bottom 40%',
+                            onEnter: () => {
+                                console.log('scroll In');
+                            },
+                            onEnterBack: () => {
+                                console.log('scroll Back');
+                            },
+                        },
+                    }
+                );
+            });
+
+            const pElements = document.querySelectorAll('p');
+            pElements.forEach((element) => {
+                gsap.fromTo(
+                    element,
+                    {
+                        opacity: 0,
+                        y: 10,
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 2,
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top center',
+                            end: 'bottom center',
+                            onEnter: () => {
+                                console.log('scroll In');
+                            },
+                            onEnterBack: () => {
+                                console.log('scroll Back');
+                            },
+                        },
+                    }
+                );
+            });
+        }
+        setAnimation();
     }, []);
     return (
         <>
@@ -186,53 +229,46 @@ const Profile: React.FC = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className={styles.body}>
-                <canvas className={styles.canvas} ref={canvasRef}></canvas>
+                <canvas className={styles.canvas} ref={canvasRef}>
+                </canvas>
                 <main className={styles.main}>
-                    <h1>PROFILE</h1>
+                    <div className={styles.titleBox}>
+                        <h1 className="title">PROFILE</h1>
+                    </div>
                     <section className={styles.section}>
-                        <h2 className='title'>ご覧いただきありがとうございます。</h2>
+                        <h2 className='h2'>
+                            ご覧いただきありがとうございます。
+                        </h2>
                         <p className='message'>
-                            PYLORHYTHM 農添と申します。<br />
+                            PYLORHYTHM 農添と申します。
+                        </p>
+                        <p className='message'>
+                            オンラインスクールでHTML CSS javaScript PHPを学び、フリーランスとして活動開始。<br />
+                            主にWordPressの構築からコーディングがメインの案件を受注していました。<br />
                         </p>
                     </section>
                     <section className={styles.section}>
-                        <h2 className='title'>お仕事以上のお仕事を</h2>
+                        <h2 >お仕事以上のお仕事を</h2>
                         <p className='message'>
                             テストテストテストテストテスト
                         </p>
                     </section>
                     <section className={styles.section}>
-                        <h2 className='title'>WEB制作LIFE</h2>
+                        <h2>WEB制作LIFE</h2>
                         <p className='message'>
                             2020年にオンラインスクールでHTML CSS javaScript PHPを学び、9月、フリーランスとして活動開始。<br />
                             まずは上記の経験を活かしWordPressメインのWEB制作メインで案件を受注していました。<br />
                         </p>
-                        <div className='imgWrap'>
-                            <Image
-                                src="/space.jpg"
-                                alt="スマホで行ける僕らの遊び場(メタバース)"
-                                width={2998}
-                                height={1640}
-                            />
-                        </div>
                     </section>
                     <section className={styles.section}>
-                        <h2 className='title'>WEB制作LIFE</h2>
+                        <h2>WEB制作LIFE</h2>
                         <p className='message'>
                             2020年にオンラインスクールでHTML CSS javaScript PHPを学び、9月、フリーランスとして活動開始。<br />
                             まずは上記の経験を活かしWordPressメインのWEB制作メインで案件を受注していました。<br />
                         </p>
-                        <div className='imgWrap'>
-                            <Image
-                                src="/space.jpg"
-                                alt="スマホで行ける僕らの遊び場(メタバース)"
-                                width={2998}
-                                height={1640}
-                            />
-                        </div>
                     </section>
                     <section className={styles.sectionLast}>
-                        <Link href="/">
+                        <Link href="/portfolio">
                             Next
                         </Link>
                     </section>
