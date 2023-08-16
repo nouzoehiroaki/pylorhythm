@@ -251,28 +251,31 @@ const Profile: React.FC = () => {
                             PYLORHYTHM 農添と申します。
                         </p>
                         <p className='message'>
-                            オンラインスクールでHTML CSS javaScript PHPを学び、フリーランスとして活動開始。<br />
-                            主にWordPressの構築からコーディングがメインの案件を受注していました。<br />
+                            オンラインスクールでHTML、CSS、JavaScript、PHPを学び、その後フリーランスとしてのキャリアをスタートしました。<br />
+                            これまで主に、WordPressサイトの構築とコーディングを専門に、様々なプロジェクトに携わってまいりました。
                         </p>
                     </section>
                     <section className={styles.section}>
                         <h2 >お仕事以上のお仕事を</h2>
                         <p className='message'>
-                            テストテストテストテストテスト
+                            本当の信用とは、ご依頼内容の範囲をさらに越えた所で掴むものだと考えます。<br />
+                            つまり、10の事を頼まれたら15で返す。<br />
+                            これが仕事だと思っています。
                         </p>
                     </section>
                     <section className={styles.section}>
-                        <h2>WEB制作LIFE</h2>
+                        <h2>仕事に対する意気込み</h2>
                         <p className='message'>
-                            2020年にオンラインスクールでHTML CSS javaScript PHPを学び、9月、フリーランスとして活動開始。<br />
-                            まずは上記の経験を活かしWordPressメインのWEB制作メインで案件を受注していました。<br />
+                            どんなお仕事であれ、やるからには「その会社を乗っ取る」くらいの意気込みでやります。<br />
+                            そうすることで、報酬とは別に、リスペクトを手にすることができます。<br />
+                            それこそが僕にとって最大のリターンとなります。
                         </p>
                     </section>
                     <section className={styles.section}>
-                        <h2>WEB制作LIFE</h2>
+                        <h2>最後に</h2>
                         <p className='message'>
-                            2020年にオンラインスクールでHTML CSS javaScript PHPを学び、9月、フリーランスとして活動開始。<br />
-                            まずは上記の経験を活かしWordPressメインのWEB制作メインで案件を受注していました。<br />
+                            僕のこれまでのポートフォリオです。<br />
+                            各案件ごとに、大まかな予算や反省点など記載していますので、ぜひご覧ください。
                         </p>
                     </section>
                     <section className={styles.sectionLast}>
