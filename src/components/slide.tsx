@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import styles from '@/styles/Portfolio/Portfolio.module.scss';
 const Slide: React.FC = () => {
     const sectionRef = useRef(null);
     const triggerRef = useRef(null);
     const pinRef = useRef(null);
     gsap.registerPlugin(ScrollTrigger);
+    gsap.config({
+        nullTargetWarn: false,
+    });
     useEffect(() => {
         const pin = gsap.fromTo(sectionRef.current, {
             translateX:0
@@ -42,11 +46,11 @@ const Slide: React.FC = () => {
               },
               scrollTrigger: {
                 trigger: pinRef.current,
-                scrub: !0,
+                scrub: true, 
                 start: '-=300',
                 end: '+=3000',
-                pin: !0,
-                markers: true
+                pinSpacing: false,
+                pin: true
               }
         })
         .to(txt1, { opacity: 0, delay: 600 })
@@ -76,38 +80,40 @@ const Slide: React.FC = () => {
     }, []);
     return (
         <>
-            <section className='outer'>
+            <section className={styles.outer}>
                 <div ref={triggerRef}>
-                    <div ref={sectionRef} className='inner'>
-                        <div className='section'>
+                    <div ref={sectionRef} className={styles.inner}>
+                        <div className={styles.section}>
                             <h2>section 1</h2>
                         </div>
-                        <div className='section'>
+                        <div className={styles.section}>
                             <h2>section 2</h2>
                         </div>
-                        <div className='section'>
+                        <div className={styles.section}>
                             <h2>section 3</h2>
                         </div>
-                        <div className='section'>
+                        <div className={styles.section}>
                             <h2>section 4</h2>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="outer02">
-                <div ref={pinRef} className='inner02'>
-                    <div className='section'>
-                        <div className="title02">
-                            <span className="spanOne">Efficacious</span>
-                            <span className="spanTwo">Craven</span>
-                            <span className="spanThree">Intelligent</span>
-                            <span className="spanFour">Dazzling</span>
-                        </div>
-                        <div className="images">
-                            <img src="/space.jpg" alt="" className="imgOne"/>
-                            <img src="/nasa.jpg" alt="" className="imgTwo"/>
-                            <img src="/space.jpg" alt="" className="imgThree"/>
-                            <img src="/nasa.jpg" alt="" className="imgFour"/>
+            <section className={styles.outer02}>
+                <div  ref={pinRef}>
+                    <div className={styles.inner02}>
+                        <div className={styles.section}>
+                            <div className={styles.title02}>
+                                <span className="spanOne">Efficacious</span>
+                                <span className="spanTwo">Craven</span>
+                                <span className="spanThree">Intelligent</span>
+                                <span className="spanFour">Dazzling</span>
+                            </div>
+                            <div className={styles.images}>
+                                <img src="/space.jpg" alt="" className="imgOne"/>
+                                <img src="/nasa.jpg" alt="" className="imgTwo"/>
+                                <img src="/space.jpg" alt="" className="imgThree"/>
+                                <img src="/nasa.jpg" alt="" className="imgFour"/>
+                            </div>
                         </div>
                     </div>
                 </div>
