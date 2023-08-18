@@ -17,6 +17,78 @@
             letter-spacing: 5px;
         }
     }
+    .outer{
+        overflow: hidden;
+        .inner{
+            height: 100vh;
+            width: 400vw;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            .section{
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h2{
+                    color:#fff;
+                }
+            }
+        }
+    }
+    .outer02{
+        overflow: hidden;
+        .inner02{
+            height: 400vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            .section{
+                height: 100vh;
+                width: 100vw;
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: 1fr;
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 64px 0;
+                .title02 {
+                    grid-column: 1 / 5;
+                    grid-row: 1;
+                    position: relative;
+                    font-size: 3.6rem;
+                    font-weight: bold;
+                    letter-spacing: 0.025em;
+                    line-height: 1.1;
+                    z-index: 2;
+                    color:#fff;
+                    span:not(:first-child) {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                    }
+                }
+                .images {
+                    grid-column: 4 / -1;
+                    grid-row: 1;
+                    position: relative;
+                    
+                    img {
+                      width: 100%;
+                      height: auto;
+                      
+                      &:not(:first-child) {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                      }
+                    }
+                }
+            }
+        }
+    }
     .sectionLast{
         padding: 20px;
         font-size: 3.5rem;

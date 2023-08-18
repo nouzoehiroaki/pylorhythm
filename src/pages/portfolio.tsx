@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link'; 
 import styles from '@/styles/Portfolio/Portfolio.module.scss';
-import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
@@ -37,7 +36,7 @@ const Portfolio: React.FC = () => {
                     <div className={styles.titleBox}>
                         <h1 className="title">PORTFOLIO</h1>
                     </div>
-                    <div className='cont'> 
+                    <div className={styles.slide}> 
                         <Slide/>
                     </div>
                     <section className={styles.sectionLast}>
