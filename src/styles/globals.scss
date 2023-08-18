@@ -3,11 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 .imgWrap {
     position: relative;
     top: 40%;
-    /* leftはapp.jsで付加される */
-    // height: 40%;
     width: 1px;
     overflow: hidden;
     opacity: 0;
@@ -24,3 +27,96 @@
         object-fit: cover;
     }
 }
+.outer{
+    overflow: hidden;
+    .inner{
+        height: 100vh;
+        width: 400vw;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        .section{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2{
+                color:#fff;
+            }
+        }
+    }
+}
+.outer02{
+    overflow: hidden;
+    .inner02{
+        height: 400vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .section{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 1fr;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 0;
+            .title02 {
+                grid-column: 1 / 5;
+                grid-row: 1;
+                position: relative;
+                font-size: 3.6rem;
+                font-weight: bold;
+                letter-spacing: 0.025em;
+                line-height: 1.1;
+                z-index: 2;
+                color:#fff;
+                span:not(:first-child) {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+            }
+            .images {
+                grid-column: 4 / -1;
+                grid-row: 1;
+                position: relative;
+                
+                img {
+                  width: 100%;
+                  height: auto;
+                  
+                  &:not(:first-child) {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                  }
+                }
+            }
+        }
+    }
+}
+// .luxy {
+//     width: 100%;
+//     height: 100vh; 
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 2rem;
+//     background-color: #f5f5f5;
+//     &.section1 {
+//         background-color: #2980b9;
+//     }
+
+//     &.section2 {
+//         background-color: #f1c40f;
+//     }
+
+//     &.section3 {
+//         background-color: #9b59b6;
+//     }
+    
+// }

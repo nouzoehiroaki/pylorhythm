@@ -189,10 +189,10 @@ const Profile: React.FC = () => {
                             start: 'top 60%',
                             end: 'bottom 40%',
                             onEnter: () => {
-                                console.log('scroll In');
+                                
                             },
                             onEnterBack: () => {
-                                console.log('scroll Back');
+                               
                             },
                         },
                     }
@@ -258,30 +258,28 @@ const Profile: React.FC = () => {
                     <section className={styles.section}>
                         <h2 >お仕事以上のお仕事を</h2>
                         <p className='message'>
-                            本当の信用とは、ご依頼内容の範囲をさらに越えた所で掴むものだと考えます。<br />
-                            つまり、10の事を頼まれたら15で返す。<br />
-                            これが仕事だと思っています。
+                            真の信頼は、顧客からのご依頼の範囲を超えて、付加価値を提供することによって確立されると考えます。<br />
+                            つまり、提供された10のタスクに対し、15の価値を提供することで差別化を図り、信頼を積み重ねていくことが仕事の本質であると捉えています。
                         </p>
                     </section>
                     <section className={styles.section}>
                         <h2>仕事に対する意気込み</h2>
                         <p className='message'>
-                            どんなお仕事であれ、やるからには「その会社を乗っ取る」くらいの意気込みでやります。<br />
-                            そうすることで、報酬とは別に、リスペクトを手にすることができます。<br />
-                            それこそが僕にとって最大のリターンとなります。
+                            どんな仕事でも、徹底的な取り組みを通じて組織に大きな価値を提供したいという意欲を持っています。<br />
+                            この姿勢を通じ、信頼を積み重ね、それがいずれは「敬意」となり返ってくる事こそ、僕にとっての最大のリターンであると考えます。
                         </p>
                     </section>
                     <section className={styles.section}>
                         <h2>最後に</h2>
                         <p className='message'>
                             僕のこれまでのポートフォリオです。<br />
-                            各案件ごとに、大まかな予算や反省点など記載していますので、ぜひご覧ください。
+                            各案件ごとに、予算面や反省点など記載していますので、ぜひご覧ください。
                         </p>
                     </section>
                     <section className={styles.sectionLast}>
-                        <Link href="/portfolio">
+                        <a href="/portfolio">
                             Next
-                        </Link>
+                        </a>
                     </section>
                 </main>
             </div>
