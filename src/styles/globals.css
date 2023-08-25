@@ -11,6 +11,10 @@ img {
      object-fit: cover;
 }
 
+a {
+  text-decoration: none;
+}
+
 .imgWrap {
   position: relative;
   top: 40%;

@@ -28,6 +28,7 @@
   color: white;
   font-size: 5rem;
   letter-spacing: 5px;
+  text-shadow: 1px 1px 1px #333;
 }
 .main .section {
   min-height: 100vh;
@@ -35,6 +36,7 @@
 }
 .main .section h2, .main .section p {
   color: white;
+  text-shadow: 1px 1px 1px #333;
 }
 .main .section h2 {
   font-size: 2rem;
