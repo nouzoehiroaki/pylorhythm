@@ -169,6 +169,7 @@
   width: 100%;
   text-align: justify;
   color: #fff;
+  display: block;
 }
 .main .outer02 .inner02 .section .title02 span h2 {
   font-size: 2rem;
@@ -239,6 +240,11 @@
 @media (max-width: 767px) {
   .main .outer02 .inner02 .section .images {
     margin-top: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .main .outer02 .inner02 .section .images {
+    margin-top: 5px;
   }
 }
 .main .outer02 .inner02 .section .images img {
