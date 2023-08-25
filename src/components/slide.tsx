@@ -45,7 +45,7 @@ const Slide: React.FC = () => {
         
         let startValue;
         if (window.innerWidth <= 767) {
-            startValue = '-=100';
+            startValue = '-=50';
         } else {
             startValue = '-=300';
         }
@@ -65,7 +65,7 @@ const Slide: React.FC = () => {
         .to(txt1, { opacity: 0, delay: 600, pointerEvents: "none"  })
         .to(img1, { opacity: 0, y: -20 }, "<")
 
-        .fromTo(txt2, { opacity: 0, pointerEvents: "none" }, { opacity: 1, pointerEvents: "auto" })
+        .fromTo(txt2, { opacity: 0, pointerEvents: "none" },{ opacity: 1, pointerEvents: "auto" })
         .fromTo(img2, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "<")
         
         .to(txt2, { opacity: 0, delay: 600 , pointerEvents: "none"})

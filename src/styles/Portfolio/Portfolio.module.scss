@@ -151,6 +151,7 @@
                         width: 100%;
                         text-align: justify;
                         color:#fff;
+                        display: block;
                         h2{
                             font-size: 2rem;
                             margin-bottom: 30px;
@@ -216,6 +217,9 @@
                     position: relative;
                     @media (max-width: 767px) {
                         margin-top: 50px;
+                    }
+                    @media (max-width: 480px) {
+                        margin-top: 5px;
                     }
                     img {
                         width: 80%;
