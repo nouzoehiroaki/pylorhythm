@@ -45,9 +45,15 @@ const Slide: React.FC = () => {
         
         let startValue;
         if (window.innerWidth <= 767) {
-            startValue = '-=50';
+            startValue = '-=100';
         } else {
             startValue = '-=300';
+        }
+        let endValue;
+        if (window.innerWidth <= 767) {
+            endValue = '+=2000';
+        } else {
+            endValue = '+=3000';
         }
         const pin02 = gsap.timeline({
             defaults: {
@@ -57,7 +63,7 @@ const Slide: React.FC = () => {
                 trigger: pinRef.current,
                 scrub: true, 
                 start: startValue,
-                end: '+=3000',
+                end: endValue,
                 pinSpacing: false,
                 pin: true
             }
