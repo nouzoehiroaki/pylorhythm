@@ -10,7 +10,6 @@
 }
 
 .main {
-  text-align: center;
   font-family: "Roboto Slab", serif;
   position: absolute;
   width: 100vw;
@@ -33,8 +32,10 @@
 .main .section {
   min-height: 100vh;
   padding: 20px;
+  max-width: 1000px;
+  margin: auto;
 }
-.main .section h2, .main .section p {
+.main .section h2, .main .section p, .main .section dl {
   color: white;
   text-shadow: 1px 1px 1px #333;
 }
@@ -43,7 +44,66 @@
   margin-bottom: 30px;
 }
 .main .section p {
-  font-size: 1.5rem;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.9;
+  -webkit-text-size-adjust: 100%;
+}
+.main .section p.mini {
+  font-size: 14px;
+}
+.main .section .box .textBox {
+  margin-bottom: 50px;
+}
+.main .section .box .flex {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .main .section .box .flex {
+    display: block;
+  }
+}
+.main .section .box .flex .imgBox {
+  margin-right: 30px;
+}
+@media (max-width: 767px) {
+  .main .section .box .flex .imgBox {
+    margin-right: 0;
+  }
+}
+.main .section .box .flex .imgBox img {
+  max-width: 400px;
+  margin-right: auto;
+  display: block;
+}
+@media (max-width: 767px) {
+  .main .section .box .flex .imgBox img {
+    margin: 0 auto 30px;
+  }
+}
+.main .section .box .flex .listBox {
+  text-align: justify;
+}
+.main .section .box .flex .listBox dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .section .box .flex .listBox dl dt {
+  width: 25%;
+}
+@media (max-width: 991px) {
+  .main .section .box .flex .listBox dl dt {
+    width: 100%;
+  }
+}
+.main .section .box .flex .listBox dl dd {
+  width: 75%;
+  margin-bottom: 10px;
+}
+@media (max-width: 991px) {
+  .main .section .box .flex .listBox dl dd {
+    width: 100%;
+  }
 }
 .main .sectionLast {
   min-height: 50vh;
@@ -54,14 +114,15 @@
   display: block;
   text-decoration: none;
   color: #f0f5f2;
-  padding: 1.5rem 3rem;
+  padding: 20px 0;
   background: transparent;
   border: 1px solid #aaa;
   font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.5s;
-  width: 150px;
+  width: 300px;
   margin: auto;
+  text-align: center;
 }
 .main .sectionLast a:hover {
   background: #f0f5f2;

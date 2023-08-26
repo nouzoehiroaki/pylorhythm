@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
@@ -188,18 +189,12 @@ const Profile: React.FC = () => {
                             trigger: element,
                             start: 'top 60%',
                             end: 'bottom 40%',
-                            onEnter: () => {
-                                
-                            },
-                            onEnterBack: () => {
-                               
-                            },
                         },
                     }
                 );
             });
 
-            const pElements = document.querySelectorAll('p');
+            const pElements = document.querySelectorAll('.message');
             pElements.forEach((element) => {
                 gsap.fromTo(
                     element,
@@ -215,12 +210,8 @@ const Profile: React.FC = () => {
                             trigger: element,
                             start: 'top center',
                             end: 'bottom center',
-                            onEnter: () => {
-                                console.log('scroll In');
-                            },
-                            onEnterBack: () => {
-                                console.log('scroll Back');
-                            },
+                            // onEnter: () => {},
+                            // onEnterBack: () => {},
                         },
                     }
                 );
@@ -247,38 +238,68 @@ const Profile: React.FC = () => {
                         <h2 className='h2'>
                             ご覧いただきありがとうございます。
                         </h2>
-                        <p className='message'>
-                            PYLORHYTHM 農添と申します。
-                        </p>
-                        <p className='message'>
-                            オンラインスクールでHTML、CSS、JavaScript、PHPを学び、その後フリーランスとしてのキャリアをスタートしました。<br />
-                            これまで主に、WordPressサイトの構築とコーディングを専門に、様々なプロジェクトに携わってまいりました。
-                        </p>
+                        <div className={`${styles.box} message`}>
+                            <div className={styles.textBox}>
+                                <p className={styles.mini}>
+                                    オンラインスクールでHTML、CSS、JavaScript、PHPを学び、<br />
+                                    その後フリーランスとしてのキャリアをスタートしました。<br />
+                                    これまで主に、WordPressサイトの構築とコーディングを専門に、様々なプロジェクトに携わってまいりました。
+                                </p>
+                            </div>
+                            <div className={styles.flex}>
+                                <div className={styles.imgBox}>
+                                    <picture>
+                                        <source srcSet="/prof/prof.webp" type="image/webp" />
+                                        <Image
+                                            src="/prof/prof.jpg"
+                                            alt=""
+                                            width={640}
+                                            height={427}
+                                            className={styles.prof}
+                                        />
+                                    </picture>
+                                </div>
+                                <div className={styles.listBox}>
+                                    <dl>
+                                        <dt>名称</dt>
+                                        <dd>PYLORHYTHM(ピロリズム)</dd>
+                                        <dt>所在地</dt>
+                                        <dd>千葉県内</dd>
+                                        <dt>お問い合わせ</dt>
+                                        <dd>info@kgetheshadowmen.com</dd>
+                                        <dt>使用言語</dt>
+                                        <dd>HTML,CSS,SCSS,javaScript,PHP,TypeScript</dd>
+                                        <dt>使用フレームワーク</dt>
+                                        <dd>Bootstrap,jQuery,React,Next.js</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                     <section className={styles.section}>
                         <h2 >お仕事以上のお仕事を</h2>
-                        <p className='message'>
-                            真の信頼は、顧客からのご依頼の範囲を超えて、付加価値を提供することによって確立されると考えます。<br />
-                            つまり、提供された10のタスクに対し、15の価値を提供することで差別化を図り、信頼を積み重ねていくことが仕事の本質であると捉えています。
-                        </p>
+                        <div className='message'>
+                            <p>
+                                真の信頼は、顧客からのご依頼の範囲を超えて、付加価値を提供することによって確立されると考えます。<br />
+                                つまり、提供された10のタスクに対し、15の価値を提供することで差別化を図り、信頼を積み重ねていくことが仕事の本質であると捉えています。
+                            </p>
+                        </div>
                     </section>
                     <section className={styles.section}>
-                        <h2>仕事に対する意気込み</h2>
-                        <p className='message'>
-                            どんな仕事でも、徹底的な取り組みを通じて組織に大きな価値を提供したいという意欲を持っています。<br />
-                            この姿勢を通じ、信頼を積み重ね、それがいずれは「敬意」となり返ってくる事こそ、僕にとっての最大のリターンであると考えます。
-                        </p>
+                        <h2>フリーランスとしての理念</h2>
+                        <div className='message'>
+                            <p>
+                                どんな仕事でも、徹底的な取り組みを通じて組織に大きな価値を提供したいという意欲を持っています。<br />
+                                この姿勢を通じ、信頼を積み重ね、いつしか「敬意」となり返ってくる事こそ、僕にとっての最大のリターンであると考えます。
+                            </p>
+                        </div>
                     </section>
                     <section className={styles.section}>
-                        <h2>最後に</h2>
-                        <p className='message'>
-                            僕のこれまでのポートフォリオです。<br />
-                            各案件ごとに、予算面や反省点など記載していますので、ぜひご覧ください。
-                        </p>
+                        <h2>最後までお読みいただきありがとうございました。</h2>
                     </section>
                     <section className={styles.sectionLast}>
                         <Link href="/">
-                            最後までご覧いただきありがとうございました。
+                            Thank You!
                         </Link>
                     </section>
                 </main>
