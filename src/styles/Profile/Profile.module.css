@@ -52,6 +52,9 @@
 .main .section p.mini {
   font-size: 14px;
 }
+.main .section a.white {
+  color: #fff;
+}
 .main .section .box .textBox {
   margin-bottom: 50px;
 }

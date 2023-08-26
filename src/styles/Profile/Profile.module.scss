@@ -49,6 +49,11 @@
                 font-size:14px;
             }
         }
+        a{
+            &.white{
+                color: #fff;
+            }
+        }
         .box{
             .textBox{
                 margin-bottom: 50px;

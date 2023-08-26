@@ -4,6 +4,8 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import Head from 'next/head'
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 //import Link from 'next/link'; 
 import styles from '@/styles/Home/Home.module.scss'
 
@@ -179,7 +181,12 @@ const Home: React.FC = () => {
             animate();
         }
     }, []);
-  
+    const router = useRouter();
+
+    const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        router.push('/portfolio', undefined, { scroll: false });
+    };
     return (
         <>
             <Head>
@@ -188,16 +195,22 @@ const Home: React.FC = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <motion.div
+                initial={{ opacity: 0 }} // 初期状態
+                animate={{ opacity: 1 }} // マウント時
+                exit={{ opacity: 0 }}    // アンマウント時
+            >
             <div className={styles.body}>
                 <canvas className="webgl" ref={canvasRef}></canvas>
                 <main className={styles.main}>
                     <div className={styles.content}>
-                        <a href="/portfolio">
+                        <a href="/portfolio"  onClick={handleNavigation}>
                             Portfolio
                         </a>
                     </div>
                 </main>
             </div>
+            </motion.div>
         </>
     );
 };
