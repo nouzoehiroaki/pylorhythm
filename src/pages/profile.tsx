@@ -229,9 +229,9 @@ const Profile: React.FC = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <motion.div
-                initial={{ opacity: 0 }} // 初期状態
-                animate={{ opacity: 1 }} // マウント時
-                exit={{ opacity: 0 }}    // アンマウント時
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
             >
             <div className={styles.body}>
                 <canvas className={styles.canvas} ref={canvasRef}>

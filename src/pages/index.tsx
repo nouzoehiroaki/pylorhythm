@@ -181,12 +181,7 @@ const Home: React.FC = () => {
             animate();
         }
     }, []);
-    const router = useRouter();
 
-    const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        router.push('/portfolio', undefined, { scroll: false });
-    };
     return (
         <>
             <Head>
@@ -196,15 +191,15 @@ const Home: React.FC = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <motion.div
-                initial={{ opacity: 0 }} // 初期状態
-                animate={{ opacity: 1 }} // マウント時
-                exit={{ opacity: 0 }}    // アンマウント時
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
             >
             <div className={styles.body}>
                 <canvas className="webgl" ref={canvasRef}></canvas>
                 <main className={styles.main}>
                     <div className={styles.content}>
-                        <a href="/portfolio"  onClick={handleNavigation}>
+                        <a href="/portfolio" >
                             Portfolio
                         </a>
                     </div>
