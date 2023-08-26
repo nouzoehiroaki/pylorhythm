@@ -4,7 +4,7 @@ import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 import Head from 'next/head'
-import Link from 'next/link'; 
+//import Link from 'next/link'; 
 import styles from '@/styles/Home/Home.module.scss'
 
 const Home: React.FC = () => {
@@ -192,9 +192,9 @@ const Home: React.FC = () => {
                 <canvas className="webgl" ref={canvasRef}></canvas>
                 <main className={styles.main}>
                     <div className={styles.content}>
-                        <Link href="/profile">
-                            Next
-                        </Link>
+                        <a href="/portfolio">
+                            Portfolio
+                        </a>
                     </div>
                 </main>
             </div>

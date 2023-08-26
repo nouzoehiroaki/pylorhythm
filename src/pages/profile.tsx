@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import Head from 'next/head';
-//import Link from 'next/link';
+import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
@@ -277,9 +277,9 @@ const Profile: React.FC = () => {
                         </p>
                     </section>
                     <section className={styles.sectionLast}>
-                        <a href="/portfolio">
-                            Next
-                        </a>
+                        <Link href="/">
+                            最後までご覧いただきありがとうございました。
+                        </Link>
                     </section>
                 </main>
             </div>

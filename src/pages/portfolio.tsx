@@ -40,8 +40,8 @@ const Portfolio: React.FC = () => {
                         <Slide/>
                     </div>
                     <section className={styles.sectionLast}>
-                        <Link href="/">
-                            Next
+                        <Link href="/profile">
+                            Profile
                         </Link>
                     </section>
                 </main>
