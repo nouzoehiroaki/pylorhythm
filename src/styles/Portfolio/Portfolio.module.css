@@ -254,11 +254,6 @@
 .main .outer02 {
   overflow: hidden;
   padding-top: 100px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(/bg02.jpg);
-  background-attachment: fixed;
 }
 .main .outer02 .inner02 {
   height: 400vh;
@@ -401,11 +396,6 @@
   padding: 20px;
   font-size: 3.5rem;
   position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(/bg02.jpg);
-  background-attachment: fixed;
 }
 .main .sectionLast a {
   display: block;
@@ -426,5 +416,20 @@
   background: #f0f5f2;
   color: #494646;
   border: 1px solid #494646;
+}
+.main .bg02 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/bg02.jpg);
+  background-attachment: fixed;
+}
+@media (max-width: 767px) {
+  .main .bg02 {
+    background-image: url(/bg02.jpg);
+    background-attachment: scroll;
+    background-repeat: repeat;
+    background-size: contain;
+  }
 }
 /*# sourceMappingURL=Portfolio.module.css.map */
