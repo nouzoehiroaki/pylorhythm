@@ -344,7 +344,7 @@ const Slide: React.FC = () => {
                     </div>
                 </div>
             </section>
-            <section className={styles.outer02}>
+            <section className={`${styles.outer02} ${styles.bg02}`}>
                 <div ref={pinRef}>
                     <div className={styles.inner02}>
                         <div className={styles.section}>

@@ -51,7 +51,7 @@ const Portfolio: React.FC = () => {
                     <div className={styles.slide}> 
                         <Slide/>
                     </div>
-                    <section className={styles.sectionLast}>
+                    <section className={`${styles.sectionLast} ${styles.bg02}`}>
                         <Link href="/profile">
                             Profile
                         </Link>

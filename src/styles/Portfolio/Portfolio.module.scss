@@ -218,11 +218,6 @@
     .outer02{
         overflow: hidden;
         padding-top: 100px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url(/bg02.jpg);
-        background-attachment: fixed;
         .inner02{
             height: 400vh;
             width: 100vw;
@@ -349,11 +344,6 @@
         padding: 20px;
         font-size: 3.5rem;
         position: relative;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url(/bg02.jpg);
-        background-attachment: fixed;
         a{
             display: block;
             text-decoration:none;
@@ -373,6 +363,19 @@
                 color: #494646;
                 border: 1px solid #494646;
             }
+        }
+    }
+    .bg02{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(/bg02.jpg);
+        background-attachment: fixed;
+        @media (max-width: 767px) {
+            background-image: url(/bg02.jpg);
+            background-attachment:scroll;
+            background-repeat: repeat;
+            background-size: contain;
         }
     }
 }
