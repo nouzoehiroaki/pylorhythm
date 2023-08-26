@@ -7,7 +7,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
 import styles from '@/styles/Profile/Profile.module.scss';
-import { motion } from 'framer-motion';
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
     nullTargetWarn: false,
@@ -228,11 +227,6 @@ const Profile: React.FC = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-            >
             <div className={styles.body}>
                 <canvas className={styles.canvas} ref={canvasRef}>
                 </canvas>
@@ -316,13 +310,12 @@ const Profile: React.FC = () => {
                         </div>
                     </section>
                     <section className={styles.sectionLast}>
-                        <Link href="/" scroll={false}>
+                        <Link href="/">
                             Thank You!
                         </Link>
                     </section>
                 </main>
             </div>
-            </motion.div>
         </>
     );
 };
