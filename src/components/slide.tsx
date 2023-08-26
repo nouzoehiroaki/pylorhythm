@@ -16,7 +16,7 @@ const Slide: React.FC = () => {
         const pin = gsap.fromTo(sectionRef.current, {
             translateX:0
         },{
-            translateX:"-400vw",
+            translateX:"-500vw",
             ease:"none",
             duration:1,
             scrollTrigger:{
@@ -106,7 +106,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / HTML,CSS,jQuery,PHP / WordPress /
+                                    HTML,CSS,jQuery,PHP / WordPress /
                                 </p>
                                 <p className={styles.read}>
                                     クリックイベントによる文字出現のアニメーションを駆使し、サイト内のコンテンツを魅力的かつ簡単に更新可能な仕様としました。全てのコンテンツは、WordPressのカスタムフィールドによるテキスト入力と画像挿入に対応しており、手軽に管理できるのが特徴です。
@@ -136,6 +136,7 @@ const Slide: React.FC = () => {
                                         className={styles.plate}
                                     />
                                 </picture>
+                                <p className={styles.foreword}>パソコン画面をスクロールしてみてください</p>
                             </div>
                         </div>
                         <div id='metabatch' className={styles.section}>
@@ -146,7 +147,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / JSX,SCSS,CSS MODULE,Next.js,TypeScript / Vercel
+                                    JSX,SCSS Modules,Next.js,TypeScript / Vercel
                                 </p>
                                 <p className={styles.read}>
                                     NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。Next.jsを使用し、SPAサイトを実装しました。<br />
@@ -187,7 +188,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / HTML,CSS,jQuery,PHP / WordPress /
+                                    Planning / Design / HTML,CSS,jQuery,PHP / WordPress /
                                 </p>
                                 <p className={styles.read}>
                                     近所にあるクラフトビール屋さんのWEBサイトをリニューアルしました。その際、Jimdoで取得された独自ドメインをXドメインに移管しました。
@@ -267,7 +268,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / JSX,SCSS,React,CSS MODULE / microCMS / EmailJs
+                                    JSX,SCSS Modules,React.js / microCMS / EmailJs
                                 </p>
                                 <p className={styles.read}>
                                     microCMSを使用し、ヘッドレスCMSを実現しました。
@@ -300,11 +301,51 @@ const Slide: React.FC = () => {
                                 </picture>
                             </div>
                         </div>
+                        <div id='matsuyan' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://mattyan.site/" target='_blank' rel='noopener noreferrer'>
+                                        松本＠障害者雇用でも人生逆転
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    Planning / Direction / Design / HTML,CSS,jQuery /  WordPress
+                                </p>
+                                <p className={styles.read}>
+                                    ランディングページ制作の構成構築からデザイン、コーディングまで全て担当しました。
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/matsuyan.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/matsuyan.png"
+                                                alt=""
+                                                width={1500}
+                                                height={10457}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
             <section className={styles.outer02}>
-                <div  ref={pinRef}>
+                <div ref={pinRef}>
                     <div className={styles.inner02}>
                         <div className={styles.section}>
                             <div className={styles.title02}>
@@ -353,10 +394,10 @@ const Slide: React.FC = () => {
                                 <span className="spanFour">
                                     <h2>TODO LIST</h2>
                                     <p className={styles.skill}>
-                                        JSX,CSS,REACT
+                                        JSX,CSS,React.js
                                     </p>
                                     <p className={styles.read}>
-                                        やる事リストアプリ
+                                        TODO LISTアプリ
                                     </p>
                                     <p>
                                         <Link href="https://template.pylorhythm.com/todo/" target='_blank' rel='noopener noreferrer'>
@@ -368,43 +409,43 @@ const Slide: React.FC = () => {
                             <div className={styles.images}>
                                 <picture>
                                     <source srcSet="/view/imgmap.webp" type="image/webp" />
-                                        <Image
-                                            src="/view/imgmap.png"
-                                            alt=""
-                                            width={2000}
-                                            height={1011}
-                                            className="imgOne"
-                                        />
+                                    <Image
+                                        src="/view/imgmap.png"
+                                        alt=""
+                                        width={2000}
+                                        height={1011}
+                                        className="imgOne"
+                                    />
                                 </picture>
                                 <picture>
                                     <source srcSet="/view/sim.webp" type="image/webp" />
-                                        <Image
-                                            src="/view/sim.png"
-                                            alt=""
-                                            width={2000}
-                                            height={1011}
-                                            className="imgTwo"
-                                        />
+                                    <Image
+                                        src="/view/sim.png"
+                                        alt=""
+                                        width={2000}
+                                        height={1011}
+                                        className="imgTwo"
+                                    />
                                 </picture>
                                 <picture>
                                     <source srcSet="/view/time-table.webp" type="image/webp" />
-                                        <Image
-                                            src="/view/time-table.png"
-                                            alt=""
-                                            width={2000}
-                                            height={1011}
-                                            className="imgThree"
-                                        />
+                                    <Image
+                                        src="/view/time-table.png"
+                                        alt=""
+                                        width={2000}
+                                        height={1011}
+                                        className="imgThree"
+                                    />
                                 </picture>
                                 <picture>
                                     <source srcSet="/view/todo.webp" type="image/webp" />
-                                        <Image
-                                            src="/view/todo.png"
-                                            alt=""
-                                            width={2000}
-                                            height={1011}
-                                            className="imgFour"
-                                        />
+                                    <Image
+                                        src="/view/todo.png"
+                                        alt=""
+                                        width={2000}
+                                        height={1011}
+                                        className="imgFour"
+                                    />
                                 </picture>
                             </div>
                         </div>

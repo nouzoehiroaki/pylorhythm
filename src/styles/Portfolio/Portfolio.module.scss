@@ -3,21 +3,114 @@
     text-align: center;
     font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif;
     margin-top: 0;
-    background-color: #fff;
     position: relative;
-    .titleBox{
+    .wrap{
+        position: relative;
         width: 100vw;
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h1{
-            font-family: "Roboto Slab", serif;
-            color: #333;
-            font-size: 5rem;
-            letter-spacing: 5px;
-            @media (max-width: 574px) {
-                font-size: 2.5rem;
+        .wrapLayer{
+            position: absolute;
+            inset: 0;
+            clip-path: inset(0);
+            .parallax {
+                position: fixed;
+                inset: 0;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                &.bg01{
+                    background-image: url(/bg.jpg);
+                }
+                .titleBox{
+                    width: 100vw;
+                    height: 100vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    h1{
+                        font-family: "Roboto Slab", serif;
+                        color: #333;
+                        font-size: 5rem;
+                        letter-spacing: 5px;
+                        @media (max-width: 574px) {
+                            font-size: 2.5rem;
+                        }
+                    }
+                    .chevronBox{
+                        position: absolute;
+                        bottom:10%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        -webkit-transform: translateX(-50%);
+                        -ms-transform: translateX(-50%);
+                        .chevron{
+                            position: absolute;
+                            width: 28px;
+                            height: 8px;
+                            opacity: 0;
+                            transform: scale3d(0.5, 0.5, 0.5);
+                            animation: move 3s ease-out infinite;
+                            &:first-child {
+                                animation: move 3s ease-out 1s infinite;
+                            }
+                            &:nth-child(2) {
+                                animation: move 3s ease-out 2s infinite;
+                            }
+                            &:before,&:after{
+                                content:'';
+                                position: absolute;
+                                top: 0;
+                                height: 100%;
+                                width: 51%;
+                                background: #333;
+                            }
+                            &:before {
+                                left: 0;
+                                transform: skew(0deg, 30deg);
+                            }
+                            &:after {
+                                right: 0;
+                                width: 50%;
+                                transform: skew(0deg, -30deg);
+                            }
+                            @keyframes move {
+                                25% {
+                                  opacity: 1;
+                              
+                                }
+                                33% {
+                                  opacity: 1;
+                                  transform: translateY(30px);
+                                }
+                                67% {
+                                  opacity: 1;
+                                  transform: translateY(40px);
+                                }
+                                100% {
+                                  opacity: 0;
+                                  transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+                                }
+                            }
+                        }
+                        .text {
+                            display: block;
+                            margin-top: 75px;
+                            margin-left: -30px;
+                            font-size: 12px;
+                            color: #333;
+                            text-transform: uppercase;
+                            white-space: nowrap;
+                            opacity: .25;
+                            animation: pulse 2s linear alternate infinite;
+                        }
+                        @keyframes pulse {
+                            to {
+                              opacity: 1;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -25,7 +118,7 @@
         overflow: hidden;
         .inner{
             height: 100vh;
-            width: 500vw;
+            width: 600vw;
             display: flex;
             flex-direction: row;
             position: relative;
@@ -35,7 +128,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: #fff;
+                flex-wrap: wrap;
                 @media (max-width: 767px) {
                     flex-direction: column;
                     padding: 0 20px;
@@ -92,6 +185,12 @@
                                 margin-top: 5px;
                             }
                         }
+                        &.foreword{
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 1rem;
+                            margin-top: 5px;
+                        }
                     }
                     .moc {
                         position: relative;
@@ -118,8 +217,12 @@
     }
     .outer02{
         overflow: hidden;
-        background-color: #333;
         padding-top: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(/bg02.jpg);
+        background-attachment: fixed;
         .inner02{
             height: 400vh;
             width: 100vw;
@@ -246,7 +349,11 @@
         padding: 20px;
         font-size: 3.5rem;
         position: relative;
-        background-color: #333;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(/bg02.jpg);
+        background-attachment: fixed;
         a{
             display: block;
             text-decoration:none;

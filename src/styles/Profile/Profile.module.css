@@ -43,6 +43,11 @@
   font-size: 2rem;
   margin-bottom: 30px;
 }
+.main .section h2 span {
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
 .main .section p {
   font-size: 18px;
   text-align: justify;

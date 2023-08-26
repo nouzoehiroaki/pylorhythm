@@ -7,6 +7,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
 import styles from '@/styles/Profile/Profile.module.scss';
+import { text } from 'stream/consumers';
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
     nullTargetWarn: false,
@@ -241,9 +242,9 @@ const Profile: React.FC = () => {
                         <div className={`${styles.box} message`}>
                             <div className={styles.textBox}>
                                 <p className={styles.mini}>
-                                    オンラインスクールでHTML、CSS、JavaScript、PHPを学び、<br />
-                                    その後フリーランスとしてのキャリアをスタートしました。<br />
-                                    これまで主に、WordPressサイトの構築とコーディングを専門に、様々なプロジェクトに携わってまいりました。
+                                    2019年、フリーランスとしてのキャリアをスタートしました。<br />
+                                    主に、WordPressサイトの構築とコーディングを専門に、様々なプロジェクトに携わってまいりました。<br />
+                                    ここ最近はNext.jsやReactを用いたヘッドレスCMSの構築や、SPAサイトの実装に勤しんでおります。
                                 </p>
                             </div>
                             <div className={styles.flex}>
@@ -267,10 +268,8 @@ const Profile: React.FC = () => {
                                         <dd>千葉県内</dd>
                                         <dt>お問い合わせ</dt>
                                         <dd>info@kgetheshadowmen.com</dd>
-                                        <dt>使用言語</dt>
-                                        <dd>HTML,CSS,SCSS,javaScript,PHP,TypeScript</dd>
-                                        <dt>使用フレームワーク</dt>
-                                        <dd>Bootstrap,jQuery,React,Next.js</dd>
+                                        <dt>業務内容</dt>
+                                        <dd>コーディング / ディレクション / CMS導入 / その他WEB制作全般</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -280,8 +279,8 @@ const Profile: React.FC = () => {
                         <h2 >お仕事以上のお仕事を</h2>
                         <div className='message'>
                             <p>
-                                真の信頼は、顧客からのご依頼の範囲を超えて、付加価値を提供することによって確立されると考えます。<br />
-                                つまり、提供された10のタスクに対し、15の価値を提供することで差別化を図り、信頼を積み重ねていくことが仕事の本質であると捉えています。
+                                顧客からのご依頼の範囲をこえた付加価値を提供することにより信頼が確立されていくと思っています。<br />
+                                つまり、要求された10のタスクに対し、15の価値を提供できるようなデベロップメントを心がけています。
                             </p>
                         </div>
                     </section>
@@ -289,19 +288,22 @@ const Profile: React.FC = () => {
                         <h2>フリーランスとしての理念</h2>
                         <div className='message'>
                             <p>
-                                どんな仕事でも、徹底的な取り組みを通じて組織に大きな価値を提供したいという意欲を持っています。<br />
-                                この姿勢を通じ、信頼を積み重ね、いつしか「敬意」となり返ってくる事こそ、僕にとっての最大のリターンであると考えます。
+                                徹底的な取り組みを通じ、大きな価値を提供したいという気持ちを持っています。<br />
+                                この姿勢を通じ、信頼を積み重ね、いつしか「敬意」となり返ってくる事こそ、最大のリターンであると思っています。
                             </p>
                         </div>
                     </section>
                     <section className={styles.section}>
-                        <h2>最後までお読みいただきありがとうございました。</h2>
+                        <h2>
+                            最後までお読みいただきありがとうございました。
+                            <span>是非一緒にお仕事できれば幸いです。</span>
+                        </h2>
                         <div className='message'>
                             <p>
                                 このポートフォリオサイトは
                             </p>
                             <p className={styles.skill}>
-                                JSX,SCSS,CSSMODULE,GSAP,Next.js / vercel 
+                                JSX,SCSS Modules,GSAP,Next.js / vercel 
                             </p>
                             <p>
                                 で構築されております。

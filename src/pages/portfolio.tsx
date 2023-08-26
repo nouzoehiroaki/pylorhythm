@@ -33,8 +33,20 @@ const Portfolio: React.FC = () => {
             </Head>
             <div className={styles.body}>
                 <main className={styles.main}>
-                    <div className={styles.titleBox}>
-                        <h1 className="title">PORTFOLIO</h1>
+                    <div className={styles.wrap}>
+                        <div className={styles.wrapLayer}>
+                            <div className={`${styles.parallax} ${styles.bg01}`}>
+                                <div className={styles.titleBox}>
+                                    <h1 className="title">PORTFOLIO</h1>
+                                    <div className={styles.chevronBox}>
+                                        <div className={styles.chevron}></div>
+                                        <div className={styles.chevron}></div>
+                                        <div className={styles.chevron}></div>
+                                        <span className={styles.text}>Scroll down</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.slide}> 
                         <Slide/>
