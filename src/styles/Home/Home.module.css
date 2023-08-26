@@ -28,13 +28,16 @@
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   color: #f0f5f2;
-  mix-blend-mode: difference;
-  padding: 1.5rem 3rem;
   background: transparent;
   border: 1px solid #aaa;
   font-size: 1.4rem;
+  padding: 20px 0;
+  width: 150px;
+  margin: auto;
   cursor: pointer;
   transition: all 0.5s;
+  font-family: "Roboto Slab", serif;
+  text-align: center;
 }
 .body .main .content a:hover {
   background: #f0f5f2;

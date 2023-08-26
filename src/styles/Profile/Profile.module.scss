@@ -9,7 +9,6 @@
     background-size: cover;
 }
 .main {
-    text-align: center;
     font-family: "Roboto Slab", serif;
     position: absolute;
     width: 100vw;
@@ -31,7 +30,9 @@
     .section {
         min-height: 100vh;
         padding: 20px;
-        h2,p{
+        max-width: 1000px;
+        margin: auto;
+        h2,p,dl{
             color: white;
             text-shadow: 1px 1px 1px #333;
         }
@@ -40,8 +41,58 @@
             margin-bottom: 30px;
         }
         p{
-            font-size: 1.5rem;
-            
+            font-size:18px;
+            text-align: justify;
+            line-height: 1.9;
+            -webkit-text-size-adjust: 100%;
+            &.mini{
+                font-size:14px;
+            }
+        }
+        .box{
+            .textBox{
+                margin-bottom: 50px;
+            }
+            .flex{
+                display: flex;
+                @media (max-width: 767px) {
+                    display: block;
+                }
+                .imgBox{
+                    margin-right: 30px;
+                    @media (max-width: 767px) {
+                        margin-right: 0;
+                    }
+                    img{
+                        max-width:  400px;
+                        margin-right: auto;
+                        display: block;
+                        @media (max-width: 767px) {
+                            margin: 0 auto 30px;
+                        }
+                    }
+                }
+                .listBox{
+                    text-align: justify;
+                    dl{
+                        display: flex;
+                        flex-wrap: wrap;
+                        dt{
+                            width: 25%;
+                            @media (max-width: 991px) {
+                                width: 100%
+                            }
+                        }
+                        dd{
+                            width: 75%;
+                            margin-bottom: 10px;
+                            @media (max-width: 991px) {
+                                width: 100%
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .sectionLast{
@@ -52,14 +103,15 @@
             display: block;
             text-decoration:none;
             color: #f0f5f2;
-            padding: 1.5rem 3rem;
+            padding: 20px 0;
             background: transparent;
             border: 1px solid #aaa;
             font-size: 1.4rem;
             cursor: pointer;
             transition: all 0.5s;
-            width: 150px;
+            width: 300px;
             margin: auto;
+            text-align: center;
             &:hover {
                 background: #f0f5f2;
                 color: #494646;

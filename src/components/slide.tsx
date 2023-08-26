@@ -88,7 +88,7 @@ const Slide: React.FC = () => {
         .from(img4, { opacity: 0, y: 20 }, "<")
         
         .to(txt4, { opacity: 1, duration: 600, pointerEvents: "auto" })
-        .to(img4, { opacity: 1, y: -20 }, "<");
+        .to(img4, { opacity: 1, y: 0 }, "<");
         return () =>{
             pin02.kill()
         }
@@ -106,7 +106,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / HTML,CSS,jQuery / WordPress /
+                                    Planning / HTML,CSS,jQuery,PHP / WordPress /
                                 </p>
                                 <p className={styles.read}>
                                     クリックイベントによる文字出現のアニメーションを駆使し、サイト内のコンテンツを魅力的かつ簡単に更新可能な仕様としました。全てのコンテンツは、WordPressのカスタムフィールドによるテキスト入力と画像挿入に対応しており、手軽に管理できるのが特徴です。
@@ -146,7 +146,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / HTML,CSS,Next.js,TypeScript / Vercel
+                                    Planning / JSX,SCSS,CSS MODULE,Next.js,TypeScript / Vercel
                                 </p>
                                 <p className={styles.read}>
                                     NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。Next.jsを使用し、SPAサイトを実装しました。<br />
@@ -167,13 +167,16 @@ const Slide: React.FC = () => {
                                         </picture>
                                     </div>
                                 </div>
-                                <Image
-                                    src="/view/bg_sp_moc.png"
-                                    alt=""
-                                    width={600}
-                                    height={144}
-                                    className={styles.plate}
-                                />
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
                             </div>
                         </div>
                         <div id='tsumugi' className={styles.section}>
@@ -184,7 +187,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / HTML,CSS,jQuery / WordPress /
+                                    Planning / HTML,CSS,jQuery,PHP / WordPress /
                                 </p>
                                 <p className={styles.read}>
                                     近所にあるクラフトビール屋さんのWEBサイトをリニューアルしました。その際、Jimdoで取得された独自ドメインをXドメインに移管しました。
@@ -204,13 +207,16 @@ const Slide: React.FC = () => {
                                         </picture>
                                     </div>
                                 </div>
-                                <Image
-                                    src="/view/bg_sp_moc.png"
-                                    alt=""
-                                    width={600}
-                                    height={144}
-                                    className={styles.plate}
-                                />
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
                             </div>
                         </div>
                         <div id='cando-house' className={styles.section}>
@@ -241,13 +247,16 @@ const Slide: React.FC = () => {
                                         </picture>
                                     </div>
                                 </div>
-                                <Image
-                                    src="/view/bg_sp_moc.png"
-                                    alt=""
-                                    width={600}
-                                    height={144}
-                                    className={styles.plate}
-                                />
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
                             </div>
                         </div>
                         <div id='theater1' className={styles.section}>
@@ -258,7 +267,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / HTML,CSS,React / microCMS / EmailJs
+                                    Planning / JSX,SCSS,React,CSS MODULE / microCMS / EmailJs
                                 </p>
                                 <p className={styles.read}>
                                     microCMSを使用し、ヘッドレスCMSを実現しました。
@@ -279,13 +288,16 @@ const Slide: React.FC = () => {
                                         </picture>
                                     </div>
                                 </div>
-                                <Image
-                                    src="/view/bg_sp_moc.png"
-                                    alt=""
-                                    width={600}
-                                    height={144}
-                                    className={styles.plate}
-                                />
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
                             </div>
                         </div>
                     </div>
