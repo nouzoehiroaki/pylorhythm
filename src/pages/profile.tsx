@@ -243,8 +243,10 @@ const Profile: React.FC = () => {
                             <div className={styles.textBox}>
                                 <p className={styles.mini}>
                                     2019年、フリーランスとしてのキャリアをスタートしました。<br />
-                                    主に、WordPressサイトの構築とコーディングを専門に、様々なプロジェクトに携わってまいりました。<br />
-                                    ここ最近はNext.jsやReactを用いたヘッドレスCMSの構築や、SPAサイトの実装に勤しんでおります。
+                                    これまで、WordPressを駆使したコーポレートサイトの構築を中心に事業を展開してまいりました。<br />
+                                    フロントエンドをメインとしつつ、PHPやデータベースを活用し、動的コンテンツの実装にも深い経験を有します。<br />
+                                    WordPressのレンダリング課題を認識し、現在はヘッドレスCMSとNext.jsの組み合わせにシフト。<br />
+                                    SPAの実装でサイトのパフォーマンスを最適化する戦略を推進中です。
                                 </p>
                             </div>
                             <div className={styles.flex}>
@@ -269,7 +271,7 @@ const Profile: React.FC = () => {
                                         <dt>お問い合わせ</dt>
                                         <dd>info@kgetheshadowmen.com</dd>
                                         <dt>業務内容</dt>
-                                        <dd>コーディング / ディレクション / CMS導入 / その他WEB制作全般</dd>
+                                        <dd>要件定義、設計、開発、テスト、運用保守、進捗管理</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -303,7 +305,7 @@ const Profile: React.FC = () => {
                                 このポートフォリオサイトは
                             </p>
                             <p className={styles.skill}>
-                                JSX,SCSS Modules,GSAP,Next.js / vercel 
+                                React(Next.js),SCSS Modules,GSAP / vercel 
                             </p>
                             <p>
                                 で構築されております。
