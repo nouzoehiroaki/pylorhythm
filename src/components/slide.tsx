@@ -147,7 +147,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    JSX,SCSS Modules,Next.js,TypeScript / Vercel
+                                    React(Next.js),SCSS Modules,TypeScript / Vercel
                                 </p>
                                 <p className={styles.read}>
                                     NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。Next.jsを使用し、SPAサイトを実装しました。<br />
@@ -268,7 +268,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    JSX,SCSS Modules,React.js / microCMS / EmailJs
+                                    React,SCSS Modules / microCMS / EmailJs
                                 </p>
                                 <p className={styles.read}>
                                     microCMSを使用し、ヘッドレスCMSを実現しました。
@@ -394,7 +394,7 @@ const Slide: React.FC = () => {
                                 <span className="spanFour">
                                     <h2>TODO LIST</h2>
                                     <p className={styles.skill}>
-                                        JSX,CSS,React.js
+                                        React,CSS
                                     </p>
                                     <p className={styles.read}>
                                         TODO LISTアプリ
