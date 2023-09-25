@@ -74,13 +74,13 @@
             }
             .flex{
                 display: flex;
+                gap: 30px;
                 @media (max-width: 767px) {
                     display: block;
                 }
                 .imgBox{
-                    margin-right: 30px;
-                    @media (max-width: 767px) {
-                        margin-right: 0;
+                    @media (min-width: 768px) {
+                        width: 30%;
                     }
                     img{
                         max-width:  400px;
@@ -92,18 +92,21 @@
                     }
                 }
                 .listBox{
+                    @media (min-width: 768px) {
+                        width: 70%;
+                    }
                     text-align: justify;
                     dl{
                         display: flex;
                         flex-wrap: wrap;
                         dt{
-                            width: 25%;
+                            width: 30%;
                             @media (max-width: 991px) {
                                 width: 100%
                             }
                         }
                         dd{
-                            width: 75%;
+                            width: 70%;
                             margin-bottom: 10px;
                             @media (max-width: 991px) {
                                 width: 100%
@@ -112,6 +115,12 @@
                     }
                 }
             }
+        }
+        .skillSheetDl a{
+            text-decoration:underline;
+            margin-top: 10px;
+            display: block;
+            font-size: 18px;
         }
     }
     .sectionLast{

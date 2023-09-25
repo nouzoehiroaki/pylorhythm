@@ -12,11 +12,14 @@ const Slide: React.FC = () => {
     gsap.config({
         nullTargetWarn: false,
     });
+    ScrollTrigger.config({
+        ignoreMobileResize: true
+    });
     useEffect(() => {
         const pin = gsap.fromTo(sectionRef.current, {
             translateX:0
         },{
-            translateX:"-500vw",
+            translateX:"-600vw",
             ease:"none",
             duration:1,
             scrollTrigger:{
@@ -98,6 +101,89 @@ const Slide: React.FC = () => {
             <section className={styles.outer}>
                 <div ref={triggerRef}>
                     <div ref={sectionRef} className={styles.inner}>
+                        <div id='crypto' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://send-transaction-xi.vercel.app/" target='_blank' rel='noopener noreferrer'>
+                                        仮想通貨送金アプリ
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    HTML,CSS,React,Solidity / Vercel / ethers.js / hardhat
+                                </p>
+                                <p className={styles.read}>
+                                    ウォレットアプリのメタマスクを繋ぎ、仮想通貨を簡単に送金できるアプリです。フロントエンドはReactでバックエンドはSolidityを使用しています。使用ライブラリはethers.jsで開発環境はhardhatを使用しイーサリアムチェーンへデプロイしました。<br />
+                                    <a href="https://github.com/nouzoehiroaki/sendTransaction_smartContract" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/sendTransaction_smartContract</a>
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/crypto.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/crypto.png"
+                                                alt=""
+                                                width={2000}
+                                                height={1011}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                        <div id='login' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://login-app-sepia.vercel.app/" target='_blank' rel='noopener noreferrer'>
+                                        サインアップとサインイン
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    React(Next.js),SCSS Modules,TypeScript / Vercel / Firebase
+                                </p>
+                                <p className={styles.read}>
+                                    登録とログイン機能付きサイトを作成しました。DBはFirebaseを使用しています。「test@test.com」「testtestAAA」でぜひログインしてみてください。僕の裏の顔がわかります。
+                                    <br />
+                                    <a href="https://github.com/nouzoehiroaki/login-app" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/login-app</a>
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/login.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/login.png"
+                                                alt=""
+                                                width={2000}
+                                                height={1011}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
                         <div id='ikeuch' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
@@ -136,7 +222,7 @@ const Slide: React.FC = () => {
                                         className={styles.plate}
                                     />
                                 </picture>
-                                <p className={styles.foreword}>パソコン画面をスクロールしてみてください</p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                         </div>
                         <div id='metabatch' className={styles.section}>
@@ -150,7 +236,7 @@ const Slide: React.FC = () => {
                                     React(Next.js),SCSS Modules,TypeScript / Vercel
                                 </p>
                                 <p className={styles.read}>
-                                    NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。Next.jsを使用し、SPAサイトを実装しました。<br />
+                                    NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。Next.jsを使用し、SPAサイトを実装しました。(Figmaからのコーディング)<br />
                                     <a href="https://github.com/nouzoehiroaki/metabach" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/metabach</a>
                                 </p>
                             </div>
@@ -231,7 +317,7 @@ const Slide: React.FC = () => {
                                     HTML,CSS,javaScript,PHP / WordPress /
                                 </p>
                                 <p className={styles.read}>
-                                    全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。 特に、お問い合わせページでは、ユーザーが簡単に操作できるよう、郵便番号検索機能や来場希望日時のカレンダー表示機能を実装しました。その他、WordPressで使える機能を一通り導入したイメージです。
+                                    全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。 特に、お問い合わせページでは、ユーザーが簡単に操作できるよう、郵便番号検索機能や来場希望日時のカレンダー表示機能を実装しました。その他、WordPressで使える機能を一通り導入したイメージです。(Photoshopからのコーディング)
                                 </p>
                             </div>
                             <div className={styles.box}>
@@ -272,7 +358,7 @@ const Slide: React.FC = () => {
                                 </p>
                                 <p className={styles.read}>
                                     microCMSを使用し、ヘッドレスCMSを実現しました。
-                                    脱WordPress、脱jQueryを目指し、すべてのアニメーションをReactで実装しています。お問い合わせフォームはEmailJsを使用しました。
+                                    脱WordPress、脱jQueryを目指し、すべてのアニメーションをReactで実装しています。お問い合わせフォームはEmailJsを使用しました。(Figmaからのコーディング)
                                 </p>
                             </div>
                             <div className={styles.box}>
@@ -312,7 +398,7 @@ const Slide: React.FC = () => {
                                     Planning / Direction / Design / HTML,CSS,jQuery /  WordPress
                                 </p>
                                 <p className={styles.read}>
-                                    ランディングページ制作の構成構築からデザイン、コーディングまで全て担当しました。
+                                    ランディングページ制作の構成構築からデザイン、コーディングまで全て担当しました。(XDからのコーディング)
                                 </p>
                             </div>
                             <div className={styles.box}>
