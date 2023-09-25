@@ -19,17 +19,22 @@ const Slide: React.FC = () => {
         const pin = gsap.fromTo(sectionRef.current, {
             translateX:0
         },{
-            translateX:"-600vw",
+            translateX:"-800vw",
             ease:"none",
             duration:1,
             scrollTrigger:{
                 trigger:triggerRef.current,
                 start:"top top",
-                end:"2000 top",
+                end:"800% top",
                 scrub:0.6,
-                pin:true
-            }
-
+                pin:true,
+                snap: {
+                    snapTo: "labels", 
+                    duration: {min: 0.2, max: 0.3},
+                    delay: 0.2,
+                    ease: "power1.inOut"
+                }
+            },
         });
         return () =>{
             pin.kill()
@@ -150,7 +155,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    React(Next.js),SCSS Modules,TypeScript / Vercel / Firebase
+                                    React,Next.js,SCSS Modules,TypeScript / Vercel / Firebase
                                 </p>
                                 <p className={styles.read}>
                                     登録とログイン機能付きサイトを作成しました。DBはFirebaseを使用しています。「test@test.com」「testtestAAA」でぜひログインしてみてください。僕の裏の顔がわかります。
@@ -192,11 +197,12 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    HTML,CSS,jQuery,PHP / WordPress /
+                                    HTML,CSS,jQuery,PHP / WordPress
                                 </p>
                                 <p className={styles.read}>
                                     クリックイベントによる文字出現のアニメーションを駆使し、サイト内のコンテンツを魅力的かつ簡単に更新可能な仕様としました。全てのコンテンツは、WordPressのカスタムフィールドによるテキスト入力と画像挿入に対応しており、手軽に管理できるのが特徴です。
                                 </p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
@@ -222,7 +228,6 @@ const Slide: React.FC = () => {
                                         className={styles.plate}
                                     />
                                 </picture>
-                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                         </div>
                         <div id='metabatch' className={styles.section}>
@@ -233,12 +238,13 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    React(Next.js),SCSS Modules,TypeScript / Vercel
+                                    React,Next.js,SCSS Modules,TypeScript / Vercel
                                 </p>
                                 <p className={styles.read}>
                                     NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。Next.jsを使用し、SPAサイトを実装しました。(Figmaからのコーディング)<br />
                                     <a href="https://github.com/nouzoehiroaki/metabach" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/metabach</a>
                                 </p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
@@ -274,11 +280,12 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Planning / Design / HTML,CSS,jQuery,PHP / WordPress /
+                                    Planning / Design / HTML,CSS,jQuery,PHP / WordPress
                                 </p>
                                 <p className={styles.read}>
                                     近所にあるクラフトビール屋さんのWEBサイトをリニューアルしました。その際、Jimdoで取得された独自ドメインをXドメインに移管しました。
                                 </p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
@@ -314,11 +321,12 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    HTML,CSS,javaScript,PHP / WordPress /
+                                    HTML,CSS,javaScript,PHP / WordPress
                                 </p>
                                 <p className={styles.read}>
                                     全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。 特に、お問い合わせページでは、ユーザーが簡単に操作できるよう、郵便番号検索機能や来場希望日時のカレンダー表示機能を実装しました。その他、WordPressで使える機能を一通り導入したイメージです。(Photoshopからのコーディング)
                                 </p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
@@ -360,6 +368,7 @@ const Slide: React.FC = () => {
                                     microCMSを使用し、ヘッドレスCMSを実現しました。
                                     脱WordPress、脱jQueryを目指し、すべてのアニメーションをReactで実装しています。お問い合わせフォームはEmailJsを使用しました。(Figmaからのコーディング)
                                 </p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
@@ -400,6 +409,7 @@ const Slide: React.FC = () => {
                                 <p className={styles.read}>
                                     ランディングページ制作の構成構築からデザイン、コーディングまで全て担当しました。(XDからのコーディング)
                                 </p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
@@ -438,7 +448,7 @@ const Slide: React.FC = () => {
                                 <span className="spanOne">
                                     <h2>Image Map</h2>
                                     <p className={styles.skill}>
-                                        HTML,CSS,jQuery / WordPress /
+                                        HTML,CSS,jQuery / WordPress
                                     </p>
                                     <p className={styles.read}>
                                         イメージマップとモーダルウィンドウの組み合わせ
@@ -452,7 +462,7 @@ const Slide: React.FC = () => {
                                 <span className="spanTwo">
                                     <h2>SIMULATION</h2>
                                     <p className={styles.skill}>
-                                        HTML,CSS,jQuery / WordPress /
+                                        HTML,CSS,jQuery / WordPress
                                     </p>
                                     <p className={styles.read}>
                                         価格シミュレーションアプリ
@@ -466,7 +476,7 @@ const Slide: React.FC = () => {
                                 <span className="spanThree">
                                     <h2>TIME TABLE</h2>
                                     <p className={styles.skill}>
-                                        HTML,CSS,javaScript,PHP / WordPress /
+                                        HTML,CSS,javaScript,PHP / WordPress
                                     </p>
                                     <p className={styles.read}>
                                         ラジオ番組タイムテーブル
