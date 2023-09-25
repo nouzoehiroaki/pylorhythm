@@ -245,8 +245,7 @@ const Profile: React.FC = () => {
                                     2019年、フリーランスとしてのキャリアをスタートしました。<br />
                                     これまで、WordPressを駆使したコーポレートサイトの構築を中心に事業を展開してまいりました。<br />
                                     フロントエンドをメインとしつつ、PHPやデータベースを活用し、動的コンテンツの実装にも深い経験を有します。<br />
-                                    WordPressのレンダリング課題を認識し、現在はヘッドレスCMSとNext.jsの組み合わせにシフト。<br />
-                                    SPAの実装でサイトのパフォーマンスを最適化する戦略を推進中です。
+                                    WordPressのレンダリング課題を解決するためのヘッドレス化にはNext.jsとTypescriptを使用しSPAを構築します。
                                 </p>
                             </div>
                             <div className={styles.flex}>
@@ -271,7 +270,29 @@ const Profile: React.FC = () => {
                                         <dt>お問い合わせ</dt>
                                         <dd>info@kgetheshadowmen.com</dd>
                                         <dt>業務内容</dt>
-                                        <dd>要件定義、設計、開発、テスト、運用保守、進捗管理</dd>
+                                        <dd>
+                                            要件定義、設計、開発、テスト、運用保守、進捗管理
+                                        </dd>
+                                        <dt>使用言語</dt>
+                                        <dd>
+                                            HTML / SCSS  / JavaScript / PHP / TypeScript / Solidity
+                                        </dd>
+                                        <dt>フレームワーク</dt>
+                                        <dd>
+                                            React (Next.js)  /  jQuery / Bootstrap / GSAP / Ether.js
+                                        </dd>
+                                        <dt>CMS</dt>
+                                        <dd>WordPress / microCMS</dd>
+                                        <dt>デザインカンプ</dt>
+                                        <dd>Photoshop / Illustrator / XD / Figma</dd>
+                                        <dt>テストツール</dt>
+                                        <dd>Jest</dd>
+                                        <dt>Linter</dt>
+                                        <dd>ESlint</dd>
+                                        <dt>formatter</dt>
+                                        <dd>Prettier</dd>
+                                        <dt>タスクランナー</dt>
+                                        <dd>Gulp</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -311,6 +332,9 @@ const Profile: React.FC = () => {
                                 で構築されております。
                             </p>
                             <a className={styles.white} href="https://github.com/nouzoehiroaki/pylorhythm" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/pylorhythm</a>
+                            <div className={styles.skillSheetDl}>
+                                <a className={styles.white} href="/prof/skillsheet_.pdf" download='/prof/skillsheet_.pdf'>スキルシートのダウンロード</a>
+                            </div>
                         </div>
                     </section>
                     <section className={styles.sectionLast}>
