@@ -19,7 +19,7 @@ const Slide: React.FC = () => {
         const pin = gsap.fromTo(sectionRef.current, {
             translateX:0
         },{
-            translateX:"-800vw",
+            translateX:"-700vw",
             ease:"none",
             duration:1,
             scrollTrigger:{
@@ -106,7 +106,7 @@ const Slide: React.FC = () => {
             <section className={styles.outer}>
                 <div ref={triggerRef}>
                     <div ref={sectionRef} className={styles.inner}>
-                        <div id='crypto' className={styles.section}>
+                        {/* <div id='crypto' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
                                     <Link href="https://send-transaction-xi.vercel.app/" target='_blank' rel='noopener noreferrer'>
@@ -146,7 +146,7 @@ const Slide: React.FC = () => {
                                     />
                                 </picture>
                             </div>
-                        </div>
+                        </div> */}
                         <div id='login' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
