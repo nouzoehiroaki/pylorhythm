@@ -19,7 +19,7 @@ const Slide: React.FC = () => {
         const pin = gsap.fromTo(sectionRef.current, {
             translateX:0
         },{
-            translateX:"-700vw",
+            translateX:"-800vw",
             ease:"none",
             duration:1,
             scrollTrigger:{
@@ -106,48 +106,7 @@ const Slide: React.FC = () => {
             <section className={styles.outer}>
                 <div ref={triggerRef}>
                     <div ref={sectionRef} className={styles.inner}>
-                        {/* <div id='crypto' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://send-transaction-xi.vercel.app/" target='_blank' rel='noopener noreferrer'>
-                                        仮想通貨送金アプリ
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    HTML,CSS,React,Solidity / Vercel / ethers.js / hardhat
-                                </p>
-                                <p className={styles.read}>
-                                    ウォレットアプリのメタマスクを繋ぎ、仮想通貨を簡単に送金できるアプリです。フロントエンドはReactでバックエンドはSolidityを使用しています。使用ライブラリはethers.jsで開発環境はhardhatを使用しイーサリアムチェーンへデプロイしました。<br />
-                                    <a href="https://github.com/nouzoehiroaki/sendTransaction_smartContract" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/sendTransaction_smartContract</a>
-                                </p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/crypto.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/crypto.png"
-                                                alt=""
-                                                width={2000}
-                                                height={1011}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div> */}
-                        <div id='login' className={styles.section}>
+                    <div id='login' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
                                     <Link href="https://login-app-sepia.vercel.app/" target='_blank' rel='noopener noreferrer'>
@@ -170,6 +129,47 @@ const Slide: React.FC = () => {
                                             <source srcSet="/view/login.webp" type="image/webp" />
                                             <Image
                                                 src="/view/login.png"
+                                                alt=""
+                                                width={2000}
+                                                height={1011}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                        <div id='crypto' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://send-transaction-xi.vercel.app/" target='_blank' rel='noopener noreferrer'>
+                                        仮想通貨送金アプリ(<span>ウォレット連携はご遠慮ください</span>)
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    HTML,CSS,React,Solidity / Vercel / ethers.js / hardhat
+                                </p>
+                                <p className={styles.read}>
+                                    ウォレットアプリのメタマスクを繋ぎ、仮想通貨を簡単に送金できるアプリです。フロントエンドはReactでバックエンドはSolidityを使用しています。使用ライブラリはethers.jsで開発環境はhardhatを使用しイーサリアムチェーンへデプロイしました。<br />
+                                    <a href="https://github.com/nouzoehiroaki/sendTransaction" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/sendTransaction</a>
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/crypto.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/crypto.png"
                                                 alt=""
                                                 width={2000}
                                                 height={1011}
