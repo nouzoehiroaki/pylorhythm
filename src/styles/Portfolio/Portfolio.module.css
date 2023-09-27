@@ -149,7 +149,7 @@
 }
 .main .outer .inner {
   height: 100vh;
-  width: 700vw;
+  width: 800vw;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -213,6 +213,9 @@
   background-size: contain;
   width: 13px;
   height: 13px;
+}
+.main .outer .inner .section .box h2 a span {
+  color: #f44444;
 }
 .main .outer .inner .section .box p {
   text-align: justify;
