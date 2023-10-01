@@ -31,32 +31,32 @@ const Profile: React.FC = () => {
                 0.1,
                 100
             );
-            
+
             //レンダー
             const renderer = new THREE.WebGL1Renderer({
-                canvas:canvas,
-                alpha:true
+                canvas: canvas,
+                alpha: true
             });
-            renderer.setSize(sizes.width,sizes.height);
+            renderer.setSize(sizes.width, sizes.height);
             //renderer.setPixelRatio(window.devicePixelRatio);
             const devicePixelRatio = Math.min(2, window.devicePixelRatio);
             renderer.setPixelRatio(devicePixelRatio);
 
             //ジオメトリ
-            const boxGeometry = new THREE.BoxGeometry(5, 5, 5,10);
-            const torusGeometry = new THREE.TorusGeometry(8,2,16,100);
+            const boxGeometry = new THREE.BoxGeometry(5, 5, 5, 10);
+            const torusGeometry = new THREE.TorusGeometry(8, 2, 16, 100);
 
             //マテリアル
             const boxMaterial = new THREE.MeshNormalMaterial();
-            const box = new THREE.Mesh(boxGeometry,boxMaterial);
-            box.position.set(0,.5,-15);
-            box.rotation.set(1,1,0);
+            const box = new THREE.Mesh(boxGeometry, boxMaterial);
+            box.position.set(0, .5, -15);
+            box.rotation.set(1, 1, 0);
 
             const torusMaterial = new THREE.MeshNormalMaterial();
-            const torus = new THREE.Mesh(torusGeometry,torusMaterial);
-            torus.position.set(0,1,10);
+            const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+            torus.position.set(0, 1, 10);
 
-            scene.add(box,torus);
+            scene.add(box, torus);
 
             //線型補完で滑らかに
 
@@ -74,39 +74,39 @@ const Profile: React.FC = () => {
                 function: () => void;
             }> = [];
             animationScripts.push({
-                start:0,
-                end:40,
-                function(){
+                start: 0,
+                end: 40,
+                function() {
                     camera.lookAt(box.position);
-                    camera.position.set(0,1,10);
-                    box.position.z = lerp(-15,2,scalePercent(0,40));
-                    torus.position.z = lerp(10,-20,scalePercent(0,40));
+                    camera.position.set(0, 1, 10);
+                    box.position.z = lerp(-15, 2, scalePercent(0, 40));
+                    torus.position.z = lerp(10, -20, scalePercent(0, 40));
                 },
             });
             animationScripts.push({
-                start:40,
-                end:60,
-                function(){
+                start: 40,
+                end: 60,
+                function() {
                     camera.lookAt(box.position);
-                    camera.position.set(0,1,10);
-                    box.rotation.z = lerp(1,Math.PI,scalePercent(40,60));
+                    camera.position.set(0, 1, 10);
+                    box.rotation.z = lerp(1, Math.PI, scalePercent(40, 60));
                 },
             });
             animationScripts.push({
-                start:60,
-                end:80,
-                function(){
+                start: 60,
+                end: 80,
+                function() {
                     camera.lookAt(box.position);
-                    camera.position.x = lerp(0,-15,scalePercent(60,80));
-                    camera.position.y = lerp(1,15,scalePercent(60,80));
-                    camera.position.z = lerp(10,25,scalePercent(60,80));
+                    camera.position.x = lerp(0, -15, scalePercent(60, 80));
+                    camera.position.y = lerp(1, 15, scalePercent(60, 80));
+                    camera.position.z = lerp(10, 25, scalePercent(60, 80));
                 },
             });
             animationScripts.push({
-                start:80,
-                end:100,
+                start: 80,
+                end: 100,
                 loop: true,
-                function(){
+                function() {
                     camera.lookAt(box.position);
                     box.rotation.x += 0.02;
                     box.rotation.y += 0.02;
@@ -116,8 +116,8 @@ const Profile: React.FC = () => {
             const playScrollAnimation = () => {
                 animationScripts.forEach(animation => {
                     if (
-                        (scrollParcent >= animation.start && 
-                        scrollParcent <= animation.end) || 
+                        (scrollParcent >= animation.start &&
+                            scrollParcent <= animation.end) ||
                         (animation.loop && scrollParcent >= animation.start)
                     ) {
                         animation.function();
@@ -126,36 +126,36 @@ const Profile: React.FC = () => {
             }
             //スクロール率を取得
             let scrollParcent = 0;
-            document.body.onscroll = () =>{
-                scrollParcent = 
-                (document.documentElement.scrollTop / 
-                (document.documentElement.scrollHeight - 
-                document.documentElement.clientHeight)) * 100;
+            document.body.onscroll = () => {
+                scrollParcent =
+                    (document.documentElement.scrollTop /
+                        (document.documentElement.scrollHeight -
+                            document.documentElement.clientHeight)) * 100;
             }
-            
-            window.addEventListener("resize", ()=>{
+
+            window.addEventListener("resize", () => {
                 //サイズをアップデート
                 sizes.width = window.innerWidth;
                 sizes.height = window.innerHeight;
-            
+
                 //カメラをアップデート
                 camera.aspect = sizes.width / sizes.height;
                 camera.updateProjectionMatrix();
-            
+
                 //レンダラーのアップデート
-                renderer.setSize(sizes.width,sizes.height);
+                renderer.setSize(sizes.width, sizes.height);
                 renderer.setPixelRatio(window.devicePixelRatio);
             });
 
-            
 
-            
-            const animate = () =>{
+
+
+            const animate = () => {
                 window.requestAnimationFrame(animate);
                 playScrollAnimation();
-                
-                
-                renderer.render(scene,camera);
+
+
+                renderer.render(scene, camera);
             };
             animate();
         }
@@ -303,7 +303,7 @@ const Profile: React.FC = () => {
                         <div className='message'>
                             <p>
                                 顧客からのご依頼の範囲をこえた付加価値を提供することにより信頼が確立されていくと思っています。<br />
-                                つまり、要求された10のタスクに対し、15の価値を提供できるようなデベロップメントを心がけています。
+                                つまり、要求された10のタスクに対し、15の価値を提供できるようなサービスを心がけています。
                             </p>
                         </div>
                     </section>
@@ -326,7 +326,7 @@ const Profile: React.FC = () => {
                                 このポートフォリオサイトは
                             </p>
                             <p className={styles.skill}>
-                                React(Next.js),SCSS Modules,GSAP / vercel 
+                                Next.js,SCSS,GSAP / vercel
                             </p>
                             <p>
                                 で構築されております。
