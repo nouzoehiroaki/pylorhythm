@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
-import Link from 'next/link'; 
+import Link from 'next/link';
 import styles from '@/styles/Portfolio/Portfolio.module.scss';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -12,7 +12,7 @@ gsap.config({
 });
 const Portfolio: React.FC = () => {
     const pinRef = useRef(null);
-     //見出し h1 出現
+    //見出し h1 出現
     useEffect(() => {
         const text = SplitType.create('.title');
         gsap.from(text.chars, {
@@ -48,8 +48,8 @@ const Portfolio: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.slide}> 
-                        <Slide/>
+                    <div className={styles.slide}>
+                        <Slide />
                     </div>
                     <section className={`${styles.sectionLast} ${styles.bg02}`}>
                         <Link href="/profile">

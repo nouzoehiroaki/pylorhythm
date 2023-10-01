@@ -185,7 +185,7 @@
 @media (max-width: 800px) {
   .main .outer .inner .section .box.left {
     padding-right: 0;
-    min-height: 220px;
+    min-height: 245px;
   }
 }
 .main .outer .inner .section .box h2 {
@@ -194,7 +194,7 @@
 }
 .main .outer .inner .section .box h2 a {
   color: #333;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   position: relative;
   text-decoration: underline;
@@ -213,9 +213,6 @@
   background-size: contain;
   width: 13px;
   height: 13px;
-}
-.main .outer .inner .section .box h2 a span {
-  color: #f44444;
 }
 .main .outer .inner .section .box p {
   text-align: justify;
@@ -334,6 +331,10 @@
 .main .outer02 .inner02 .section .title02 span p.read {
   font-size: 14px;
   margin-bottom: 10px;
+}
+.main .outer02 .inner02 .section .title02 span p.read .red {
+  color: #f44444;
+  position: relative;
 }
 .main .outer02 .inner02 .section .title02 span a {
   color: #333;

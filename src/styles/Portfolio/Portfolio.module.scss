@@ -145,7 +145,7 @@
                         overflow-wrap: break-word;
                         @media (max-width: 800px) {
                             padding-right: 0;
-                            min-height: 220px;
+                            min-height: 245px;
                         }
                     }
                     h2{
@@ -153,7 +153,7 @@
                         margin-bottom: 20px;
                         a{
                             color:#333;
-                            font-size: 15px;
+                            font-size: 16px;
                             font-weight: bold;
                             position: relative;
                             text-decoration: underline;
@@ -171,9 +171,6 @@
                                 background-size: contain;
                                 width: 13px;
                                 height: 13px;
-                            }
-                            span{
-                                color:#f44444;;
                             }
                         }
                     }
@@ -284,6 +281,10 @@
                             &.read{
                                 font-size: 14px;
                                 margin-bottom: 10px;
+                                .red{
+                                    color:#f44444;
+                                    position: relative;
+                                }
                             }
                         }
                         a{

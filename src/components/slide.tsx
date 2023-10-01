@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import styles from '@/styles/Portfolio/Portfolio.module.scss';
 import Image from 'next/image';
-import Link from 'next/link'; 
+import Link from 'next/link';
 const Slide: React.FC = () => {
     const sectionRef = useRef(null);
     const triggerRef = useRef(null);
@@ -17,26 +17,26 @@ const Slide: React.FC = () => {
     });
     useEffect(() => {
         const pin = gsap.fromTo(sectionRef.current, {
-            translateX:0
-        },{
-            translateX:"-800vw",
-            ease:"none",
-            duration:1,
-            scrollTrigger:{
-                trigger:triggerRef.current,
-                start:"top top",
-                end:"800% top",
-                scrub:0.6,
-                pin:true,
+            translateX: 0
+        }, {
+            translateX: "-800vw",
+            ease: "none",
+            duration: 1,
+            scrollTrigger: {
+                trigger: triggerRef.current,
+                start: "top top",
+                end: "800% top",
+                scrub: 0.6,
+                pin: true,
                 snap: {
-                    snapTo: "labels", 
-                    duration: {min: 0.2, max: 0.3},
+                    snapTo: "labels",
+                    duration: { min: 0.2, max: 0.3 },
                     delay: 0.2,
                     ease: "power1.inOut"
                 }
             },
         });
-        return () =>{
+        return () => {
             pin.kill()
         }
     }, []);
@@ -50,7 +50,9 @@ const Slide: React.FC = () => {
         const img3 = document.querySelector('.imgThree');
         const txt4 = document.querySelector('.spanFour');
         const img4 = document.querySelector('.imgFour');
-        
+        // const txt5 = document.querySelector('.spanFive');
+        // const img5 = document.querySelector('.imgFive');
+
         let startValue;
         if (window.innerWidth <= 767) {
             startValue = '-=100';
@@ -69,35 +71,41 @@ const Slide: React.FC = () => {
             },
             scrollTrigger: {
                 trigger: pinRef.current,
-                scrub: true, 
+                scrub: true,
                 start: startValue,
                 end: endValue,
                 pinSpacing: false,
                 pin: true
             }
         })
-        .to(txt1, { opacity: 0, delay: 600, pointerEvents: "none"  })
-        .to(img1, { opacity: 0, y: -20 }, "<")
+            .to(txt1, { opacity: 0, delay: 600, pointerEvents: "none" })
+            .to(img1, { opacity: 0, y: -20 }, "<")
 
-        .fromTo(txt2, { opacity: 0, pointerEvents: "none" },{ opacity: 1, pointerEvents: "auto" })
-        .fromTo(img2, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "<")
-        
-        .to(txt2, { opacity: 0, delay: 600 , pointerEvents: "none"})
-        .to(img2, { opacity: 0, y: -20 }, "<")
-        
+            .fromTo(txt2, { opacity: 0, pointerEvents: "none" }, { opacity: 1, pointerEvents: "auto" })
+            .fromTo(img2, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "<")
 
-        .fromTo(txt3, { opacity: 0, pointerEvents: "none" }, { opacity: 1, pointerEvents: "auto" })
-        .fromTo(img3, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "<")
-        
-        .to(txt3, { opacity: 0, delay: 600, pointerEvents: "none" })
-        .to(img3, { opacity: 0, y: -20 }, "<")
-        
-        .from(txt4, { opacity: 0, pointerEvents: "none" })
-        .from(img4, { opacity: 0, y: 20 }, "<")
-        
-        .to(txt4, { opacity: 1, duration: 600, pointerEvents: "auto" })
-        .to(img4, { opacity: 1, y: 0 }, "<");
-        return () =>{
+            .to(txt2, { opacity: 0, delay: 600, pointerEvents: "none" })
+            .to(img2, { opacity: 0, y: -20 }, "<")
+
+
+            .fromTo(txt3, { opacity: 0, pointerEvents: "none" }, { opacity: 1, pointerEvents: "auto" })
+            .fromTo(img3, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "<")
+
+            .to(txt3, { opacity: 0, delay: 600, pointerEvents: "none" })
+            .to(img3, { opacity: 0, y: -20 }, "<")
+
+            .fromTo(txt4, { opacity: 0, pointerEvents: "none" }, { opacity: 1, pointerEvents: "auto" })
+            .fromTo(img4, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "<")
+
+            .to(txt4, { opacity: 0, delay: 600, pointerEvents: "none" })
+            .to(img4, { opacity: 0, y: -20 }, "<");
+
+        // .from(txt5, { opacity: 0, pointerEvents: "none" })
+        // .from(img5, { opacity: 0, y: 20 }, "<")
+
+        // .to(txt5, { opacity: 1, duration: 600, pointerEvents: "auto" })
+        // .to(img5, { opacity: 1, y: 0 }, "<");
+        return () => {
             pin02.kill()
         }
     }, []);
@@ -106,29 +114,28 @@ const Slide: React.FC = () => {
             <section className={styles.outer}>
                 <div ref={triggerRef}>
                     <div ref={sectionRef} className={styles.inner}>
-                    <div id='login' className={styles.section}>
+                        <div id='habitat' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
-                                    <Link href="https://login-app-sepia.vercel.app/" target='_blank' rel='noopener noreferrer'>
-                                        サインアップとサインイン
+                                    <Link href="https://rapper-habitat.vercel.app/" target='_blank' rel='noopener noreferrer'>
+                                        Habitat of HIPHOP Artists
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    React,Next.js,SCSS Modules,TypeScript / Vercel / Firebase
+                                    Next.js,TypeScript,SCSS / Vercel
                                 </p>
                                 <p className={styles.read}>
-                                    登録とログイン機能付きサイトを作成しました。DBはFirebaseを使用しています。「test@test.com」「testtestAAA」でぜひログインしてみてください。僕の裏の顔がわかります。
-                                    <br />
-                                    <a href="https://github.com/nouzoehiroaki/login-app" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/login-app</a>
+                                    海外サイトの無料APIを叩き、アーティストマップを作成しました。一旦リリースしましたがこちらはベータ版で、以後本格的に要件定義から開発に進みたいと思います。<br />
+                                    <Link href="https://github.com/nouzoehiroaki/rapperHabitat" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/rapperHabitat</Link>
                                 </p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
                                     <div className={styles.view}>
                                         <picture>
-                                            <source srcSet="/view/login.webp" type="image/webp" />
+                                            <source srcSet="/view/habitat.webp" type="image/webp" />
                                             <Image
-                                                src="/view/login.png"
+                                                src="/view/habitat.png"
                                                 alt=""
                                                 width={2000}
                                                 height={1011}
@@ -148,28 +155,29 @@ const Slide: React.FC = () => {
                                 </picture>
                             </div>
                         </div>
-                        <div id='crypto' className={styles.section}>
+                        <div id='login' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
-                                    <Link href="https://send-transaction-xi.vercel.app/" target='_blank' rel='noopener noreferrer'>
-                                        仮想通貨送金アプリ(<span>ウォレット連携はご遠慮ください</span>)
+                                    <Link href="https://login-app-sepia.vercel.app/" target='_blank' rel='noopener noreferrer'>
+                                        Another Face
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    HTML,CSS,React,Solidity / Vercel / ethers.js / hardhat
+                                    Next.js,SCSS,TypeScript / Vercel / Firebase
                                 </p>
                                 <p className={styles.read}>
-                                    ウォレットアプリのメタマスクを繋ぎ、仮想通貨を簡単に送金できるアプリです。フロントエンドはReactでバックエンドはSolidityを使用しています。使用ライブラリはethers.jsで開発環境はhardhatを使用しイーサリアムチェーンへデプロイしました。<br />
-                                    <a href="https://github.com/nouzoehiroaki/sendTransaction" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/sendTransaction</a>
+                                    登録とログイン機能付きサイトを作成しました。DBはFirebaseを使用しています。よかったら「test@test.com」「testtestAAA」でぜひログインしてみてください。
+                                    <br />
+                                    <Link href="https://github.com/nouzoehiroaki/login-app" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/login-app</Link>
                                 </p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
                                     <div className={styles.view}>
                                         <picture>
-                                            <source srcSet="/view/crypto.webp" type="image/webp" />
+                                            <source srcSet="/view/login.webp" type="image/webp" />
                                             <Image
-                                                src="/view/crypto.png"
+                                                src="/view/login.png"
                                                 alt=""
                                                 width={2000}
                                                 height={1011}
@@ -238,11 +246,11 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    React,Next.js,SCSS Modules,TypeScript / Vercel
+                                    Next.js,SCSS,TypeScript / Vercel
                                 </p>
                                 <p className={styles.read}>
                                     NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。Next.jsを使用し、SPAサイトを実装しました。(Figmaからのコーディング)<br />
-                                    <a href="https://github.com/nouzoehiroaki/metabach" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/metabach</a>
+                                    <Link href="https://github.com/nouzoehiroaki/metabach" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/metabach</Link>
                                 </p>
                                 <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
@@ -283,7 +291,7 @@ const Slide: React.FC = () => {
                                     Planning / Design / HTML,CSS,jQuery,PHP / WordPress
                                 </p>
                                 <p className={styles.read}>
-                                    近所にあるクラフトビール屋さんのWEBサイトをリニューアルしました。その際、Jimdoで取得された独自ドメインをXドメインに移管しました。
+                                    近所にあるクラフトビール屋さんのWEBサイトをリニューアルしました。その際、Jimdoで取得された独自ドメインをXドメインに移管しました。(デザインカンプなしのコーディング)
                                 </p>
                                 <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
@@ -324,7 +332,7 @@ const Slide: React.FC = () => {
                                     HTML,CSS,javaScript,PHP / WordPress
                                 </p>
                                 <p className={styles.read}>
-                                    全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。 特に、お問い合わせページでは、ユーザーが簡単に操作できるよう、郵便番号検索機能や来場希望日時のカレンダー表示機能を実装しました。その他、WordPressで使える機能を一通り導入したイメージです。(Photoshopからのコーディング)
+                                    全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。 お問い合わせページでは、ユーザーが簡単に操作できるよう、郵便番号検索機能や来場希望日時のカレンダー表示機能を実装しました。その他、プラグイン無しでの検索機能等、WPならでは機能を一通り導入したイメージです。(Photoshopからのコーディング)
                                 </p>
                                 <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
@@ -362,7 +370,7 @@ const Slide: React.FC = () => {
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    React,SCSS Modules / microCMS / EmailJs
+                                    React,SCSS / microCMS / EmailJs
                                 </p>
                                 <p className={styles.read}>
                                     microCMSを使用し、ヘッドレスCMSを実現しました。
@@ -501,6 +509,21 @@ const Slide: React.FC = () => {
                                         </Link>
                                     </p>
                                 </span>
+
+                                {/* <span className="spanFive">
+                                    <h2>Crypto Transfer</h2>
+                                    <p className={styles.skill}>
+                                        HTML,CSS,React,Solidity / Vercel / ethers.js / hardhat
+                                    </p>
+                                    <p className={styles.read}>
+                                        <span className={styles.red}>ウォレット連携はご遠慮ください</span>
+                                    </p>
+                                    <p>
+                                        <Link href="https://send-transaction-xi.vercel.app/" target='_blank' rel='noopener noreferrer'>
+                                            仮想通貨送金アプリ
+                                        </Link>
+                                    </p>
+                                </span> */}
                             </div>
                             <div className={styles.images}>
                                 <picture>
@@ -543,6 +566,17 @@ const Slide: React.FC = () => {
                                         className="imgFour"
                                     />
                                 </picture>
+
+                                {/* <picture>
+                                    <source srcSet="/view/crypto.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/crypto.png"
+                                        alt=""
+                                        width={2000}
+                                        height={1011}
+                                        className="imgFive"
+                                    />
+                                </picture> */}
                             </div>
                         </div>
                     </div>
