@@ -19,13 +19,13 @@ const Slide: React.FC = () => {
         const pin = gsap.fromTo(sectionRef.current, {
             translateX: 0
         }, {
-            translateX: "-800vw",
+            translateX: "-900vw",
             ease: "none",
             duration: 1,
             scrollTrigger: {
                 trigger: triggerRef.current,
                 start: "top top",
-                end: "800% top",
+                end: "900% top",
                 scrub: 0.6,
                 pin: true,
                 snap: {
@@ -114,6 +114,47 @@ const Slide: React.FC = () => {
             <section className={styles.outer}>
                 <div ref={triggerRef}>
                     <div ref={sectionRef} className={styles.inner}>
+                        <div id='j-artistMap' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://rapper-habitat-japan.vercel.app/" target='_blank' rel='noopener noreferrer'>
+                                        Japanese HIPHOP Artists Map
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    Next.js,TypeScript,SCSS / Vercel
+                                </p>
+                                <p className={styles.read}>
+                                    APIを作成し、HIPHOPアーティストマップを作成しました。個人経営などしながら音楽活動を頑張ってる人達を応援したいという思いから、この制作に至りました。<br />
+                                    <Link href="https://github.com/nouzoehiroaki/rapperHabitatJapan" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/rapperHabitatJapan</Link>
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/j-artistMap.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/j-artistMap.png"
+                                                alt=""
+                                                width={2000}
+                                                height={1011}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
                         <div id='habitat' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
