@@ -242,10 +242,7 @@ const Profile: React.FC = () => {
                         <div className={`${styles.box} message`}>
                             <div className={styles.textBox}>
                                 <p className={styles.mini}>
-                                    2019年、フリーランスとしてのキャリアをスタートしました。<br />
-                                    これまで、WordPressを駆使したコーポレートサイトの構築を中心に事業を展開してまいりました。<br />
-                                    フロントエンドをメインとしつつ、PHPやデータベースを活用し、動的コンテンツの実装にも深い経験を有します。<br />
-                                    WordPressのレンダリング課題を解決するためのヘッドレス化にはNext.jsとTypescriptを使用しSPAを構築します。
+                                    WEB制作を中心に4年間フリーランスとして活動してきました。特技はWordPress のフルスクラッチ構築で、多数のプラグイン利用とオリジナル機能の実装経験を有 します。今後はNext.jsの利用やヘッドレスCMSでのパフォーマンス重視のWEBサイ ト提供、さらにはSolidityを用いたブロックチェーン技術の探求を進めていきます。 17歳から継続している音楽活動もあり、8枚のCDをリリースしています。現在43歳 と、決して若くはありませんが、20年以上積み重ねてきた経験と「最後まで諦めず やり通す」信念をもって、御社に価値を提供します。
                                 </p>
                             </div>
                             <div className={styles.flex}>
@@ -333,7 +330,7 @@ const Profile: React.FC = () => {
                             </p>
                             <a className={styles.white} href="https://github.com/nouzoehiroaki/pylorhythm" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/pylorhythm</a>
                             <div className={styles.skillSheetDl}>
-                                <a className={styles.white} href="/prof/skillsheet_.pdf" download='/prof/skillsheet_.pdf'>スキルシートのダウンロード</a>
+                                <a className={styles.white} href="/prof/skillsheet.pdf" download='/prof/skillsheet.pdf'>スキルシートのダウンロード</a>
                             </div>
                         </div>
                     </section>
