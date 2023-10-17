@@ -19,13 +19,13 @@ const Slide: React.FC = () => {
         const pin = gsap.fromTo(sectionRef.current, {
             translateX: 0
         }, {
-            translateX: "-900vw",
+            translateX: "-1100vw",
             ease: "none",
             duration: 1,
             scrollTrigger: {
                 trigger: triggerRef.current,
                 start: "top top",
-                end: "1000% top",
+                end: "1100% top",
                 scrub: 0.6,
                 pin: true,
                 snap: {
@@ -177,6 +177,46 @@ const Slide: React.FC = () => {
                                             <source srcSet="/view/ninja.webp" type="image/webp" />
                                             <Image
                                                 src="/view/ninja.png"
+                                                alt=""
+                                                width={2000}
+                                                height={10787}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                        <div id='okajimawood' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://www.okajimawood.co.jp/" target='_blank' rel='noopener noreferrer'>
+                                        恩加島木材工業株式会社
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    HTML,CSS,jQuery,PHP / WordPress
+                                </p>
+                                <p className={styles.read}>
+                                    TOPページのコーディング、Wordpressを担当しました。Luxyというjsプラグインを使用し、パララックスを実装しています。
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/okajimawood.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/okajimawood.png"
                                                 alt=""
                                                 width={2000}
                                                 height={10787}
