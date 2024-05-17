@@ -242,8 +242,19 @@ const Profile: React.FC = () => {
                         <div className={`${styles.box} message`}>
                             <div className={styles.textBox}>
                                 <p className={styles.mini}>
-                                    WEB制作を中心に4年間フリーランスとして活動してきました。特技はWordPress のフルスクラッチ構築で、多数のプラグイン利用とオリジナル機能の実装経験を有 します。今後はNext.jsの利用やヘッドレスCMSでのパフォーマンス重視のWEBサイ ト提供、さらにはSolidityを用いたブロックチェーン技術の探求を進めていきます。 17歳から継続している音楽活動もあり、8枚のCDをリリースしています。現在43歳 と、決して若くはありませんが、20年以上積み重ねてきた経験と「最後まで諦めず やり通す」信念をもって、御社に価値を提供します。
+                                    2019年からフリーランスとしてWEB制作事業を展開し活動。
+                                    主にWordPress のフルスクラッチの構築がメインで、多数のプラグインの利用やオリジナル機能の実装経験を有します。
+                                    2021年、WEB制作事業における限界値を懸念（例えばノーコードツールやAI技術の台頭）し開発の方へ方向転換。
+                                    TypescriptをベースにReactやNext .jsを使用し自主的な開発を行ってきました。
                                 </p>
+                                <p className={styles.mini}>
+                                    2023年11月、某企業（東証一部上場）に中途採用、現在BPとして、フロントエンドを担当しています。
+                                </p>
+                                <ul>
+                                    <li>決済関連システム周りの開発とテスト</li>
+                                    <li>ops1というワークフローの自動化ツールのmoc開発（yaml、javaScriptを使用）、ドキュメントの作成を担当</li>
+                                    <li>顧客業務システムの開発支援作業(設計、実装、検証、ドキュメンテーション等)</li>
+                                </ul>
                             </div>
                             <div className={styles.flex}>
                                 <div className={styles.imgBox}>
@@ -261,14 +272,14 @@ const Profile: React.FC = () => {
                                 <div className={styles.listBox}>
                                     <dl>
                                         <dt>名称</dt>
-                                        <dd>PYLORHYTHM(ピロリズム)</dd>
+                                        <dd>N.HIROAKI</dd>
                                         <dt>所在地</dt>
                                         <dd>千葉県内</dd>
                                         <dt>お問い合わせ</dt>
                                         <dd>info@kgetheshadowmen.com</dd>
                                         <dt>業務内容</dt>
                                         <dd>
-                                            要件定義、設計、開発、テスト、運用保守、進捗管理
+                                            設計、実装、テスト、運用保守、進捗管理
                                         </dd>
                                         <dt>使用言語</dt>
                                         <dd>
@@ -276,7 +287,7 @@ const Profile: React.FC = () => {
                                         </dd>
                                         <dt>フレームワーク</dt>
                                         <dd>
-                                            React (Next.js)  /  jQuery / Bootstrap / GSAP / Ether.js
+                                            React (Next.js) / Vue (Nuxt.js) / jQuery / Bootstrap / Tailwind CSS / GSAP / Ether.js
                                         </dd>
                                         <dt>CMS</dt>
                                         <dd>WordPress / microCMS</dd>
@@ -293,6 +304,18 @@ const Profile: React.FC = () => {
                                     </dl>
                                 </div>
                             </div>
+                            <div className={styles.flex}>
+                                <div className={styles.listBox}>
+                                    <dl>
+                                        <dt>バージョン管理</dt>
+                                        <dd>Git GitHub GitLab</dd>
+                                        <dt>クラウドサービス</dt>
+                                        <dd>AWS Vercel</dd>
+                                        <dt>仮想環境用ソフトウェア</dt>
+                                        <dd>Vagrant Docker </dd>
+                                    </dl>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <section className={styles.section}>
@@ -305,7 +328,7 @@ const Profile: React.FC = () => {
                         </div>
                     </section>
                     <section className={styles.section}>
-                        <h2>フリーランスとしての理念</h2>
+                        <h2>仕事に対する理念</h2>
                         <div className='message'>
                             <p>
                                 徹底的な取り組みを通じ、大きな価値を提供したいという気持ちを持っています。<br />

@@ -225,13 +225,12 @@
         overflow: hidden;
         padding-top: 100px;
         .inner02{
-            height: 400vh;
+            height:500vh;
             width: 100vw;
             display: flex;
             flex-direction: column;
             position: relative;
             .section{
-                height: 100vh;
                 width: 100vw;
                 max-width: 1000px;
                 margin: 0 auto;
@@ -368,6 +367,7 @@
             width: 300px;
             margin: auto;
             text-align: center;
+            margin-bottom: 50vh;
             &:hover {
                 background: #f0f5f2;
                 color: #494646;

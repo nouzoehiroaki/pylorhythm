@@ -40,7 +40,7 @@
   max-width: 1000px;
   margin: auto;
 }
-.main .section h2, .main .section p, .main .section dl {
+.main .section h2, .main .section p, .main .section dl, .main .section li {
   color: white;
   text-shadow: 1px 1px 1px #333;
 }
@@ -75,12 +75,20 @@
 .main .section a.white {
   color: #fff;
 }
+.main .section ul li {
+  text-align: justify;
+  line-height: 1.9;
+  -webkit-text-size-adjust: 100%;
+  font-size: 14px;
+  list-style-position: inside;
+}
 .main .section .box .textBox {
   margin-bottom: 50px;
 }
 .main .section .box .flex {
   display: flex;
   gap: 30px;
+  margin-bottom: 80px;
 }
 @media (max-width: 767px) {
   .main .section .box .flex {

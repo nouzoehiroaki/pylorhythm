@@ -35,7 +35,7 @@
         padding: 20px;
         max-width: 1000px;
         margin: auto;
-        h2,p,dl{
+        h2,p,dl,li{
             color: white;
             text-shadow: 1px 1px 1px #333;
         }
@@ -68,6 +68,15 @@
                 color: #fff;
             }
         }
+        ul{
+            li{
+                text-align: justify;
+                line-height: 1.9;
+                -webkit-text-size-adjust: 100%;
+                font-size:14px;
+                list-style-position: inside;
+            }
+        }
         .box{
             .textBox{
                 margin-bottom: 50px;
@@ -75,6 +84,7 @@
             .flex{
                 display: flex;
                 gap: 30px;
+                margin-bottom: 80px;
                 @media (max-width: 767px) {
                     display: block;
                 }
