@@ -488,13 +488,13 @@ const Slide: React.FC = () => {
                                 </span>
 
                                 <span className="spanFive">
-                                    <h2>私のもう一つの顔</h2>
+                                    <h2>ログインサイト</h2>
                                     <p className={styles.skill}>
                                         Next.js,SCSS,TypeScript / Vercel / Firebase
                                     </p>
                                     <p>
                                         <Link href="https://login-app-sepia.vercel.app/" target='_blank' rel='noopener noreferrer'>
-                                            Another Face
+                                            ログインサイト
                                         </Link>
                                     </p>
                                 </span>

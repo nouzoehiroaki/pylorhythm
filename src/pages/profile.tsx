@@ -242,13 +242,12 @@ const Profile: React.FC = () => {
                         <div className={`${styles.box} message`}>
                             <div className={styles.textBox}>
                                 <p className={styles.mini}>
-                                    2019年からフリーランスとしてWEB制作事業を展開し活動。
-                                    主にWordPress のフルスクラッチの構築がメインで、多数のプラグインの利用やオリジナル機能の実装経験を有します。
-                                    2021年、WEB制作事業における限界値を懸念（例えばノーコードツールやAI技術の台頭）し開発の方へ方向転換。
-                                    TypescriptをベースにReactやNext .jsを使用し自主的な開発を行ってきました。
+                                    2019年からフリーランスとしてWEB制作事業を展開し活動。<br />
+                                    主にWordPress のフルスクラッチ構築、開発がメインで、多数のプラグインの利用やオリジナル機能の実装経験を有します。<br />
+                                    2021年、WEB制作業務から徐々に開発の方へと方向転換し、TypescriptをベースにReactやNext.jsを使用し自主的な開発を行ってきました。
                                 </p>
                                 <p className={styles.mini}>
-                                    2023年11月、某企業（東証一部上場）に中途採用、現在BPとして、フロントエンドを担当しています。
+                                    2023年、某IT企業（東証一部上場）に中途採用で内定をいただき、現在BPとして、フロントエンドを担当しています。
                                 </p>
                                 <ul>
                                     <li>決済関連システム周りの開発とテスト</li>
@@ -279,7 +278,7 @@ const Profile: React.FC = () => {
                                         <dd>info@kgetheshadowmen.com</dd>
                                         <dt>業務内容</dt>
                                         <dd>
-                                            設計、実装、テスト、運用保守、進捗管理
+                                            要件定義、設計、実装、テスト、運用保守、進捗管理
                                         </dd>
                                         <dt>使用言語</dt>
                                         <dd>
@@ -287,18 +286,12 @@ const Profile: React.FC = () => {
                                         </dd>
                                         <dt>フレームワーク</dt>
                                         <dd>
-                                            React (Next.js) / Vue (Nuxt.js) / jQuery / Bootstrap / Tailwind CSS / GSAP / Ether.js
+                                            React (Next.js) / Vue3 (Nuxt.js) / jQuery / Bootstrap / Tailwind CSS / GSAP / Ether.js
                                         </dd>
                                         <dt>CMS</dt>
                                         <dd>WordPress / microCMS</dd>
                                         <dt>デザインカンプ</dt>
                                         <dd>Photoshop / Illustrator / XD / Figma</dd>
-                                        <dt>テストツール</dt>
-                                        <dd>Jest</dd>
-                                        <dt>Linter</dt>
-                                        <dd>ESlint</dd>
-                                        <dt>formatter</dt>
-                                        <dd>Prettier</dd>
                                         <dt>タスクランナー</dt>
                                         <dd>Gulp</dd>
                                     </dl>
@@ -312,7 +305,7 @@ const Profile: React.FC = () => {
                                         <dt>クラウドサービス</dt>
                                         <dd>AWS Vercel</dd>
                                         <dt>仮想環境用ソフトウェア</dt>
-                                        <dd>Vagrant Docker </dd>
+                                        <dd>Vagrant Docker</dd>
                                     </dl>
                                 </div>
                             </div>
