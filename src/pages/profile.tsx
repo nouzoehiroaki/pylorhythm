@@ -249,10 +249,14 @@ const Profile: React.FC = () => {
                                 <p className={styles.mini}>
                                     2023年、某IT企業（東証一部上場）に中途採用で内定をいただき、現在BPとして、フロントエンドを担当しています。
                                 </p>
+                                <p className={styles.mini}>
+                                    2025年、フリーランスとして某通信会社に常駐し、フロントエンド開発を中心に、概要設計、実装、テスト、リリースまでを一貫して担当しています。
+                                </p>
                                 <ul>
                                     <li>決済関連システム周りの開発とテスト</li>
                                     <li>ops1というワークフローの自動化ツールのmoc開発（yaml、javaScriptを使用）、ドキュメントの作成を担当</li>
                                     <li>顧客業務システムの開発支援作業(設計、実装、検証、ドキュメンテーション等)</li>
+                                    <li>金融システムの開発支援作業(設計、実装、検証、ドキュメンテーション等)</li>
                                 </ul>
                             </div>
                             <div className={styles.flex}>
@@ -275,21 +279,23 @@ const Profile: React.FC = () => {
                                         <dt>所在地</dt>
                                         <dd>千葉県内</dd>
                                         <dt>お問い合わせ</dt>
-                                        <dd>info@kgetheshadowmen.com</dd>
+                                        <dd>info@pylorhythm.com</dd>
                                         <dt>業務内容</dt>
                                         <dd>
                                             要件定義、設計、実装、テスト、運用保守、進捗管理
                                         </dd>
                                         <dt>使用言語</dt>
                                         <dd>
-                                            HTML / SCSS  / JavaScript / PHP / TypeScript / Solidity
+                                            HTML / SCSS  / JavaScript / PHP / TypeScript / Solidity / Python
                                         </dd>
                                         <dt>フレームワーク</dt>
                                         <dd>
                                             React (Next.js) / Vue3 (Nuxt.js) / jQuery / Bootstrap / Tailwind CSS / GSAP / Ether.js
                                         </dd>
                                         <dt>CMS</dt>
-                                        <dd>WordPress / microCMS</dd>
+                                        <dd>WordPress / microCMS / Shifter / Adobe Experience Manager</dd>
+                                        <dt>ノーコードツール</dt>
+                                        <dd>WebFlow</dd>
                                         <dt>デザインカンプ</dt>
                                         <dd>Photoshop / Illustrator / XD / Figma</dd>
                                         <dt>タスクランナー</dt>
@@ -301,11 +307,15 @@ const Profile: React.FC = () => {
                                 <div className={styles.listBox}>
                                     <dl>
                                         <dt>バージョン管理</dt>
-                                        <dd>Git GitHub GitLab</dd>
+                                        <dd>Git / GitHub / GitLab</dd>
                                         <dt>クラウドサービス</dt>
-                                        <dd>AWS Vercel</dd>
+                                        <dd>AWS / Vercel</dd>
                                         <dt>仮想環境用ソフトウェア</dt>
-                                        <dd>Vagrant Docker</dd>
+                                        <dd>Vagrant / Docker</dd>
+                                        <dt>インフラ・運用</dt>
+                                        <dd>CloudFront / Lambda / CloudWatch / EC2 / GitHub Actions / Kubernetes / ArgoCD / Datadog</dd>
+                                        <dt>AIツール</dt>
+                                        <dd>Claude Code / nano banana pro / ChaGPT / CodeX / Antigravity</dd>
                                     </dl>
                                 </div>
                             </div>
