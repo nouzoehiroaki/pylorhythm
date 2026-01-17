@@ -14,8 +14,7 @@
 .main .wrap .wrapLayer {
   position: absolute;
   inset: 0;
-  -webkit-clip-path: inset(0);
-          clip-path: inset(0);
+  clip-path: inset(0);
 }
 .main .wrap .wrapLayer .parallax {
   position: fixed;
@@ -60,16 +59,13 @@
   height: 8px;
   opacity: 0;
   transform: scale3d(0.5, 0.5, 0.5);
-  -webkit-animation: move 3s ease-out infinite;
-          animation: move 3s ease-out infinite;
+  animation: move 3s ease-out infinite;
 }
 .main .wrap .wrapLayer .parallax .titleBox .chevronBox .chevron:first-child {
-  -webkit-animation: move 3s ease-out 1s infinite;
-          animation: move 3s ease-out 1s infinite;
+  animation: move 3s ease-out 1s infinite;
 }
 .main .wrap .wrapLayer .parallax .titleBox .chevronBox .chevron:nth-child(2) {
-  -webkit-animation: move 3s ease-out 2s infinite;
-          animation: move 3s ease-out 2s infinite;
+  animation: move 3s ease-out 2s infinite;
 }
 .main .wrap .wrapLayer .parallax .titleBox .chevronBox .chevron:before, .main .wrap .wrapLayer .parallax .titleBox .chevronBox .chevron:after {
   content: "";
@@ -87,23 +83,6 @@
   right: 0;
   width: 50%;
   transform: skew(0deg, -30deg);
-}
-@-webkit-keyframes move {
-  25% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 1;
-    transform: translateY(30px);
-  }
-  67% {
-    opacity: 1;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-  }
 }
 @keyframes move {
   25% {
@@ -131,13 +110,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 0.25;
-  -webkit-animation: pulse 2s linear alternate infinite;
-          animation: pulse 2s linear alternate infinite;
-}
-@-webkit-keyframes pulse {
-  to {
-    opacity: 1;
-  }
+  animation: pulse 2s linear alternate infinite;
 }
 @keyframes pulse {
   to {
@@ -233,7 +206,7 @@
 }
 .main .outer .inner .section .box p.foreword {
   font-weight: bold;
-  font-size: 0.3rem;
+  font-size: 0.6rem;
   margin-top: 5px;
   color: #f44444;
 }
@@ -441,5 +414,4 @@
     background-repeat: repeat;
     background-size: contain;
   }
-}
-/*# sourceMappingURL=Portfolio.module.css.map */
+}/*# sourceMappingURL=Portfolio.module.css.map */
