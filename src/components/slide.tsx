@@ -93,31 +93,31 @@ const Slide: React.FC = () => {
             <section className={styles.outer}>
                 <div ref={triggerRef}>
                     <div ref={sectionRef} className={styles.inner}>
-                        <div id='j-artistMap' className={styles.section}>
+                        <div id='up-sider' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
-                                    <Link href="https://rapper-habitat-japan.vercel.app/" target='_blank' rel='noopener noreferrer'>
-                                        Japanese HIPHOP Artists Map
+                                    <Link href="https://corp.up-sider.com/" target='_blank' rel='noopener noreferrer'>
+                                        株式会社UPSIDER
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Next.js,TypeScript,SCSS / Vercel
+                                    WordPress,JavaScript,SCSS / Shifter
                                 </p>
                                 <p className={styles.read}>
-                                    APIを作成し、HIPHOPアーティストマップを作成しました。個人経営などしながら音楽活動を頑張ってる人達を応援したいという思いから、この制作に至りました。<br />
-                                    <Link href="https://github.com/nouzoehiroaki/rapperHabitatJapan" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/rapperHabitatJapan</Link>
+                                    Docker環境にてテーマを構築し、Shifterからデプロイ。レンダリングはSSGを採用しています（Shifterの方針）<br />
                                 </p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
                                     <div className={styles.view}>
                                         <picture>
-                                            <source srcSet="/view/j-artistMap.webp" type="image/webp" />
+                                            <source srcSet="/view/upsider.webp" type="image/webp" />
                                             <Image
-                                                src="/view/j-artistMap.png"
+                                                src="/view/upsider.png"
                                                 alt=""
-                                                width={2000}
-                                                height={1011}
+                                                width={700}
+                                                height={5335}
                                             />
                                         </picture>
                                     </div>
@@ -134,32 +134,31 @@ const Slide: React.FC = () => {
                                 </picture>
                             </div>
                         </div>
-                        <div id='metabatch' className={styles.section}>
+                        <div id='team44blox' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
-                                    <Link href="https://metabatch.ninjametavelive.com/" target='_blank' rel='noopener noreferrer'>
-                                        NINJAメタバライブ
+                                    <Link href="https://team44blox.com/" target='_blank' rel='noopener noreferrer'>
+                                        TEAM 44 BLOX OFFICIAL WEBSITE
                                     </Link>
                                 </h2>
                                 <p className={styles.skill}>
-                                    Next.js,SCSS,TypeScript / Vercel
+                                    Next.js,TypeScript,SCSS / Vercel
                                 </p>
                                 <p className={styles.read}>
-                                    NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。Next.jsを使用し、SPAサイトを実装しました。(Figmaからのコーディング)<br />
-                                    <Link href="https://github.com/nouzoehiroaki/metabach" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/metabach</Link>
+                                    HIPHOP集団 TEAM 44 BLOXのWEB SITEを作成しました。MicroCMSを活用し、ヘッドレスCMSを実装しました。レンダリングはSSRを採用。<br />
+                                    <Link href="https://github.com/nouzoehiroaki/team44blox" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/team44blox</Link>
                                 </p>
-                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
                             <div className={styles.box}>
                                 <div className={styles.moc}>
                                     <div className={styles.view}>
                                         <picture>
-                                            <source srcSet="/view/metabach.webp" type="image/webp" />
+                                            <source srcSet="/view/44blox.webp" type="image/webp" />
                                             <Image
-                                                src="/view/metabach.png"
+                                                src="/view/44blox.png"
                                                 alt=""
-                                                width={2000}
-                                                height={4117}
+                                                width={700}
+                                                height={394}
                                             />
                                         </picture>
                                     </div>
@@ -187,8 +186,7 @@ const Slide: React.FC = () => {
                                     React,SCSS / microCMS / EmailJs
                                 </p>
                                 <p className={styles.read}>
-                                    microCMSを使用し、ヘッドレスCMSを実現しました。
-                                    脱WordPress、脱jQueryを目指し、すべてのアニメーションをReactで実装しています。お問い合わせフォームはEmailJsを使用しました。(Figmaからのコーディング)
+                                    CSRを採用し、お問い合わせフォームはEmailJsを使用しました。(Figmaからのコーディング)
                                 </p>
                                 <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
@@ -200,8 +198,50 @@ const Slide: React.FC = () => {
                                             <Image
                                                 src="/view/theater1.png"
                                                 alt=""
-                                                width={2000}
-                                                height={8498}
+                                                width={700}
+                                                height={2974}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                        <div id='metabatch' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://metabatch.ninjametavelive.com/" target='_blank' rel='noopener noreferrer'>
+                                        NINJAメタバライブ
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    Next.js,SCSS,TypeScript / Vercel
+                                </p>
+                                <p className={styles.read}>
+                                    NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。SEO対策の一貫としてSSRを採用しました。(Figmaからのコーディング)<br />
+                                    <Link href="https://github.com/nouzoehiroaki/metabach" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/metabach</Link>
+                                </p>
+                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/metabach.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/metabach.png"
+                                                alt=""
+                                                width={700}
+                                                height={1441}
                                             />
                                         </picture>
                                     </div>
@@ -241,89 +281,8 @@ const Slide: React.FC = () => {
                                             <Image
                                                 src="/view/ninja.png"
                                                 alt=""
-                                                width={2000}
-                                                height={10787}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='okajimawood' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://www.okajimawood.co.jp/" target='_blank' rel='noopener noreferrer'>
-                                        恩加島木材工業株式会社
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    HTML,CSS,jQuery,PHP / WordPress
-                                </p>
-                                <p className={styles.read}>
-                                    TOPページのコーディング、Wordpressを担当しました。Luxyというjsプラグインを使用し、パララックスを実装しています。
-                                </p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/okajimawood.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/okajimawood.png"
-                                                alt=""
-                                                width={2000}
-                                                height={10787}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='mineplusdesign' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://lc.hitachi-rep.co.jp/creacasa/mineplusdesign/" target='_blank' rel='noopener noreferrer'>
-                                        クレアカーサ マインプラスデザイン
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    HTML,CSS,javaScript,PHP / WordPress
-                                </p>
-                                <p className={styles.read}>
-                                    全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。
-                                </p>
-                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/mineplusdesign.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/mineplusdesign.png"
-                                                alt=""
-                                                width={2000}
-                                                height={8968}
+                                                width={700}
+                                                height={394}
                                             />
                                         </picture>
                                     </div>
@@ -363,8 +322,88 @@ const Slide: React.FC = () => {
                                             <Image
                                                 src="/view/tsumugi.png"
                                                 alt=""
-                                                width={1500}
-                                                height={7832}
+                                                width={700}
+                                                height={3655}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                        <div id='miraistyle' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://mirai-style.net/" target='_blank' rel='noopener noreferrer'>
+                                        ミライスタイル
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    HTML,CSS,javaScript,PHP / WordPress
+                                </p>
+                                <p className={styles.read}>
+                                    全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/mirai.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/mirai.png"
+                                                alt=""
+                                                width={700}
+                                                height={394}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                        <div id='okajimawood' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://www.okajimawood.co.jp/" target='_blank' rel='noopener noreferrer'>
+                                        恩加島木材工業株式会社
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    HTML,CSS,jQuery,PHP / WordPress
+                                </p>
+                                <p className={styles.read}>
+                                    TOPページのコーディング、Wordpressを担当しました。Luxyというjsプラグインを使用し、パララックスを実装しています。
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/okajimawood.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/okajimawood.png"
+                                                alt=""
+                                                width={700}
+                                                height={394}
                                             />
                                         </picture>
                                     </div>
@@ -404,50 +443,8 @@ const Slide: React.FC = () => {
                                             <Image
                                                 src="/view/cando.png"
                                                 alt=""
-                                                width={2000}
-                                                height={4118}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='woodland' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://woodlandbothy.jp" target='_blank' rel='noopener noreferrer'>
-                                        WOODLANDBOTHY
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    HTML,CSS,javaScript,PHP / WordPress
-                                </p>
-                                <p className={styles.read}>
-                                    全ページコーディング、Wordpress組み込みを担当しました。
-                                    TOPページでは3Dモデルを回転させ、ボタンを押すと任意のところまでZoom Upするというアニメーションを実装しました。<br />
-                                    MacのChromeには対応していないためsafariでご確認くださいm(_ _)m
-                                </p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/woodland.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/woodland.png"
-                                                alt=""
-                                                width={2000}
-                                                height={1072}
+                                                width={700}
+                                                height={1441}
                                             />
                                         </picture>
                                     </div>
@@ -473,40 +470,37 @@ const Slide: React.FC = () => {
                         <div className={styles.section}>
                             <div className={styles.title02}>
                                 <span className="spanFour">
-                                    <h2>TODO LIST</h2>
+                                    <h2>Artists Map</h2>
                                     <p className={styles.skill}>
-                                        React,CSS
-                                    </p>
-                                    <p className={styles.read}>
-                                        TODO LISTアプリ
+                                        Next.js,TypeScript,SCSS / Vercel
                                     </p>
                                     <p>
-                                        <Link href="https://template.pylorhythm.com/todo/" target='_blank' rel='noopener noreferrer'>
-                                            やる事リストアプリ
+                                        <Link href="https://artist-map.kgetheshadowmen.com/" target='_blank' rel='noopener noreferrer'>
+                                            https://artist-map.kgetheshadowmen.com/
                                         </Link>
                                     </p>
                                 </span>
 
                                 <span className="spanFive">
-                                    <h2>ログインサイト</h2>
+                                    <h2>謎アプリ</h2>
                                     <p className={styles.skill}>
                                         Next.js,SCSS,TypeScript / Vercel / Firebase
                                     </p>
                                     <p>
                                         <Link href="https://login-app-sepia.vercel.app/" target='_blank' rel='noopener noreferrer'>
-                                            ログインサイト
+                                            https://login-app-sepia.vercel.app/
                                         </Link>
                                     </p>
                                 </span>
                             </div>
                             <div className={styles.images}>
                                 <picture>
-                                    <source srcSet="/view/todo.webp" type="image/webp" />
+                                    <source srcSet="/view/j-artistMap.webp" type="image/webp" />
                                     <Image
-                                        src="/view/todo.png"
+                                        src="/view/j-artistMap.png"
                                         alt=""
-                                        width={2000}
-                                        height={1011}
+                                        width={700}
+                                        height={394}
                                         className="imgFour"
                                     />
                                 </picture>
@@ -516,8 +510,8 @@ const Slide: React.FC = () => {
                                     <Image
                                         src="/view/login.png"
                                         alt=""
-                                        width={2000}
-                                        height={1011}
+                                        width={700}
+                                        height={394}
                                         className="imgFive"
                                     />
                                 </picture>
