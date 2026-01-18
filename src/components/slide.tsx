@@ -421,7 +421,7 @@ const Slide: React.FC = () => {
                                     HTML,CSS,javaScript,PHP / WordPress
                                 </p>
                                 <p className={styles.read}>
-                                    全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。 お問い合わせページでは、ユーザーが簡単に操作できるよう、郵便番号検索機能や来場希望日時のカレンダー表示機能を実装しました。その他、プラグイン無しでの検索機能等、WPならでは機能を一通り導入したイメージです。(Photoshopからのコーディング)
+                                    全ページのコーディング、WordPressへの組み込みを担当しました。 郵便番号検索機能や来場希望日時のカレンダー表示機能、プラグイン無しでの検索機能等を実装。(Photoshopからのコーディング)
                                 </p>
                                 <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
                             </div>
