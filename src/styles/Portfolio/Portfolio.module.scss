@@ -145,12 +145,15 @@
                         overflow-wrap: break-word;
                         @media (max-width: 800px) {
                             padding-right: 0;
-                            min-height: 245px;
+                            min-height: 160px;
                         }
                     }
                     h2{
                         text-align: justify;
                         margin-bottom: 20px;
+                        @media screen and (max-width: 800px) {
+                         margin-bottom: 10px;
+                        }
                         a{
                             color:#333;
                             font-size: 16px;
@@ -180,9 +183,16 @@
                             margin-bottom: 15px;
                             font-size: 15px;
                             font-weight: 500;
+                            @media screen and (max-width: 800px) {
+                                font-size: 14px;
+                                margin-bottom: 10px;
+                            }
                         }
                         &.read{
                             font-size: 14px;
+                            @media screen and (max-width: 800px) {
+                             font-size: 12px;   
+                            }
                             a{
                                 color:#333;
                                 text-decoration: underline;
@@ -233,16 +243,23 @@
             .section{
                 width: 100vw;
                 max-width: 1000px;
+                min-height: 100vh;
                 margin: 0 auto;
                 display: grid;
                 grid-template-columns: repeat(12, 1fr);
                 grid-template-rows: 1fr;
+                align-items: center;
+                align-content: center;
                 @media (max-width: 1024px) {
                     max-width: 800px;
                 }
-                @media (max-width: 767px) {
+                @media (max-width: 800px) {
                     padding:0 20px;
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    min-height: 100vh;
+                    margin-top: 80px;
                 }
                 .title02 {
                     grid-column: 1 / 5;
@@ -250,16 +267,20 @@
                     position: relative;
                     z-index: 2;
                     color:#333;
+                    
                     span{
                         width: 100%;
                         text-align: justify;
                         color:#fff;
                         display: block;
+                        @media screen and (max-width: 800px) {
+                            text-shadow: 2px 4px black;
+                        }
                         h2{
                             font-size: 2rem;
                             margin-bottom: 30px;
                             text-align: justify;
-                            @media (max-width: 767px) {
+                            @media (max-width: 800px) {
                                 text-align: center;
                             }
                         }
@@ -268,7 +289,7 @@
                             max-width: 500px;
                             margin: auto;
                             text-align: justify;
-                            @media (max-width: 767px) {
+                            @media (max-width: 800px) {
                                 max-width:unset;
                                 text-align: center;
                             }
@@ -322,27 +343,41 @@
                     grid-column: 4 / -1;
                     grid-row: 1;
                     position: relative;
-                    @media (max-width: 767px) {
-                        margin-top: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    max-height: 70vh;
+                    @media (max-width: 800px) {
+                        margin-top: 30px;
+                        max-height: 50vh;
+                        width: 100%;
                     }
                     @media (max-width: 480px) {
                         margin-top: 5px;
                     }
+                    picture {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &:not(:first-child) {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 100%;
+                        }
+                    }
                     img {
                         width: 80%;
                         height: auto;
-                        @media (max-width: 767px) {
+                        max-height: 60vh;
+                        object-fit: contain;
+                        @media (max-width: 800px) {
                             width: 100%;
                             max-width: 500px;
+                            max-height: 45vh;
                             margin: auto;
-                        }
-                        &:not(:first-child) {
-                            position: absolute;
-                            top: 20px;
-                            right: 0;
-                            @media (max-width: 767px) {
-                               left:0;
-                            }
+                            display: block;
                         }
                     }
                 }
@@ -353,6 +388,10 @@
         padding: 20px;
         font-size: 3.5rem;
         position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         a{
             display: block;
             text-decoration:none;
@@ -367,7 +406,6 @@
             width: 300px;
             margin: auto;
             text-align: center;
-            margin-bottom: 50vh;
             &:hover {
                 background: #f0f5f2;
                 color: #494646;
@@ -381,7 +419,7 @@
         background-size: cover;
         background-image: url(/bg02.jpg);
         background-attachment: fixed;
-        @media (max-width: 767px) {
+        @media (max-width: 800px) {
             background-image: url(/bg02.jpg);
             background-attachment:scroll;
             background-repeat: repeat;

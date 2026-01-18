@@ -47,18 +47,8 @@ const Slide: React.FC = () => {
         const txt5 = document.querySelector('.spanFive');
         const img5 = document.querySelector('.imgFive');
 
-        let startValue;
-        if (window.innerWidth <= 767) {
-            startValue = '-=100';
-        } else {
-            startValue = '-=300';
-        }
-        let endValue;
-        if (window.innerWidth <= 767) {
-            endValue = '+=2000';
-        } else {
-            endValue = '+=3000';
-        }
+        const startValue = 'top top';
+        const endValue = window.innerWidth <= 800 ? '+=2000' : '+=3000';
         const pin02 = gsap.timeline({
             defaults: {
                 duration: 300
