@@ -83,47 +83,6 @@ const Slide: React.FC = () => {
             <section className={styles.outer}>
                 <div ref={triggerRef}>
                     <div ref={sectionRef} className={styles.inner}>
-                        <div id='up-sider' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://corp.up-sider.com/" target='_blank' rel='noopener noreferrer'>
-                                        株式会社UPSIDER
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    WordPress,JavaScript,SCSS / Shifter
-                                </p>
-                                <p className={styles.read}>
-                                    Docker環境にてテーマを構築し、Shifterからデプロイ。レンダリングはSSGを採用しています（Shifterの方針）<br />
-                                </p>
-                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/upsider.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/upsider.png"
-                                                alt=""
-                                                width={700}
-                                                height={5335}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
                         <div id='team44blox' className={styles.section}>
                             <div className={`${styles.box} ${styles.left}`}>
                                 <h2>
@@ -149,6 +108,46 @@ const Slide: React.FC = () => {
                                                 alt=""
                                                 width={700}
                                                 height={394}
+                                            />
+                                        </picture>
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
+                                    <Image
+                                        src="/view/bg_sp_moc.png"
+                                        alt=""
+                                        width={600}
+                                        height={144}
+                                        className={styles.plate}
+                                    />
+                                </picture>
+                            </div>
+                        </div>
+                        <div id='mokkai' className={styles.section}>
+                            <div className={`${styles.box} ${styles.left}`}>
+                                <h2>
+                                    <Link href="https://mokkai-chunk.com/" target='_blank' rel='noopener noreferrer'>
+                                        株式会社木塊
+                                    </Link>
+                                </h2>
+                                <p className={styles.skill}>
+                                    WordPress,JavaScript,SCSS / Docker 
+                                </p>
+                                <p className={styles.read}>
+                                    Docker環境にてローカル構築でテーマを開発しました。メニューを押下すると横にスクロールする仕様になります。
+                                </p>
+                            </div>
+                            <div className={styles.box}>
+                                <div className={styles.moc}>
+                                    <div className={styles.view}>
+                                        <picture>
+                                            <source srcSet="/view/mokkai.webp" type="image/webp" />
+                                            <Image
+                                                src="/view/mokkai.png"
+                                                alt=""
+                                                width={700}
+                                                height={5335}
                                             />
                                         </picture>
                                     </div>
