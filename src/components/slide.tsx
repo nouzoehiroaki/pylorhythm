@@ -4,452 +4,110 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import styles from '@/styles/Portfolio/Portfolio.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import WorkSlide from '@/components/WorkSlide';
+import { works } from '@/data/works';
+import { featured } from '@/data/featured';
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.config({ nullTargetWarn: false });
+ScrollTrigger.config({ ignoreMobileResize: true });
+
+/** 横スクロールで動かす距離。スライド枚数から自動計算 (9枚なら 800) */
+const SCROLL_SPAN = (works.length - 1) * 100;
+/** クロスフェード 1 段あたりのスクロール量 (px) */
+const FADE_SPAN_PC = 3000;
+const FADE_SPAN_SP = 2000;
+
 const Slide: React.FC = () => {
-    const sectionRef = useRef(null);
-    const triggerRef = useRef(null);
-    const pinRef = useRef(null);
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.config({
-        nullTargetWarn: false,
-    });
-    ScrollTrigger.config({
-        ignoreMobileResize: true
-    });
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const triggerRef = useRef<HTMLDivElement>(null);
+    const pinRef = useRef<HTMLDivElement>(null);
+    const textRefs = useRef<(HTMLSpanElement | null)[]>([]);
+    const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+
+    // 横スクロール
     useEffect(() => {
-        const pin = gsap.fromTo(sectionRef.current, {
-            translateX: 0
-        }, {
-            translateX: "-900vw",
-            ease: "none",
-            duration: 1,
-            scrollTrigger: {
-                trigger: triggerRef.current,
-                start: "top top",
-                end: "900% top",
-                scrub: 0.6,
-                pin: true,
-                snap: {
-                    snapTo: "labels",
-                    duration: { min: 0.2, max: 0.3 },
-                    delay: 0.2,
-                    ease: "power1.inOut"
-                }
-            },
-        });
+        const pin = gsap.fromTo(
+            sectionRef.current,
+            { translateX: 0 },
+            {
+                translateX: `-${SCROLL_SPAN}vw`,
+                ease: 'none',
+                duration: 1,
+                scrollTrigger: {
+                    trigger: triggerRef.current,
+                    start: 'top top',
+                    end: `${SCROLL_SPAN}% top`,
+                    scrub: 0.6,
+                    pin: true,
+                    // 1 スライドごとにスナップ。不要ならこの snap ブロックごと削除
+                    snap: {
+                        snapTo: 1 / (works.length - 1),
+                        duration: { min: 0.2, max: 0.3 },
+                        delay: 0.2,
+                        ease: 'power1.inOut',
+                    },
+                },
+            }
+        );
         return () => {
-            pin.kill()
-        }
+            pin.kill();
+        };
     }, []);
 
+    // ピン留めセクションのクロスフェード
     useEffect(() => {
-        const txt4 = document.querySelector('.spanFour');
-        const img4 = document.querySelector('.imgFour');
-        const txt5 = document.querySelector('.spanFive');
-        const img5 = document.querySelector('.imgFive');
-
-        const startValue = 'top top';
-        const endValue = window.innerWidth <= 800 ? '+=2000' : '+=3000';
-        const pin02 = gsap.timeline({
-            defaults: {
-                duration: 300
-            },
+        const steps = featured.length;
+        const fadeSpan = window.innerWidth <= 800 ? FADE_SPAN_SP : FADE_SPAN_PC;
+        const timeline = gsap.timeline({
+            defaults: { duration: 300 },
             scrollTrigger: {
                 trigger: pinRef.current,
                 scrub: true,
-                start: startValue,
-                end: endValue,
+                start: 'top top',
+                end: `+=${fadeSpan * Math.max(steps - 1, 1)}`,
                 pinSpacing: false,
-                pin: true
+                pin: true,
+            },
+        });
+
+        featured.forEach((_, index) => {
+            const text = textRefs.current[index];
+            const image = imageRefs.current[index];
+
+            timeline
+                .fromTo(
+                    text,
+                    { opacity: 0, pointerEvents: 'none' },
+                    { opacity: 1, pointerEvents: 'auto' }
+                )
+                .fromTo(image, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, '<');
+
+            // 最後の 1 枚は出したままにする
+            if (index < steps - 1) {
+                timeline
+                    .to(text, { opacity: 0, delay: 600, pointerEvents: 'none' })
+                    .to(image, { opacity: 0, y: -20 }, '<');
             }
-        })
+        });
 
-            .fromTo(txt4, { opacity: 0, pointerEvents: "none" }, { opacity: 1, pointerEvents: "auto" })
-            .fromTo(img4, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "<")
-
-            .to(txt4, { opacity: 0, delay: 600, pointerEvents: "none" })
-            .to(img4, { opacity: 0, y: -20 }, "<")
-
-            .from(txt5, { opacity: 0, pointerEvents: "none" })
-            .from(img5, { opacity: 0, y: 20 }, "<")
-
-            .to(txt5, { opacity: 1, duration: 600, pointerEvents: "auto" })
-            .to(img5, { opacity: 1, y: 0 }, "<");
         return () => {
-            pin02.kill()
-        }
+            timeline.kill();
+        };
     }, []);
+
     return (
         <>
             <section className={styles.outer}>
                 <div ref={triggerRef}>
-                    <div ref={sectionRef} className={styles.inner}>
-                        <div id='team44blox' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://team44blox.com/" target='_blank' rel='noopener noreferrer'>
-                                        TEAM 44 BLOX OFFICIAL WEBSITE
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    Next.js,TypeScript,SCSS / Vercel
-                                </p>
-                                <p className={styles.read}>
-                                    HIPHOP集団 TEAM 44 BLOXのWEB SITEを作成しました。MicroCMSを活用し、ヘッドレスCMSを実装しました。レンダリングはSSRを採用。<br />
-                                    <Link href="https://github.com/nouzoehiroaki/team44blox" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/team44blox</Link>
-                                </p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/44blox.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/44blox.png"
-                                                alt=""
-                                                width={700}
-                                                height={394}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='mokkai' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://mokkai-chunk.com/" target='_blank' rel='noopener noreferrer'>
-                                        株式会社木塊
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    WordPress,JavaScript,SCSS / Docker 
-                                </p>
-                                <p className={styles.read}>
-                                    Docker環境にてローカル構築でテーマを開発しました。メニューを押下すると横にスクロールする仕様になります。
-                                </p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/mokkai.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/mokkai.png"
-                                                alt=""
-                                                width={700}
-                                                height={5335}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='theater1' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://test.pylorhythm.com/" target='_blank' rel='noopener noreferrer'>
-                                        シアターワン
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    React,SCSS / microCMS / EmailJs
-                                </p>
-                                <p className={styles.read}>
-                                    CSRを採用し、お問い合わせフォームはEmailJsを使用しました。(Figmaからのコーディング)
-                                </p>
-                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/theater1.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/theater1.png"
-                                                alt=""
-                                                width={700}
-                                                height={2974}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='metabatch' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://metabatch.ninjametavelive.com/" target='_blank' rel='noopener noreferrer'>
-                                        NINJAメタバライブ
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    Next.js,SCSS,TypeScript / Vercel
-                                </p>
-                                <p className={styles.read}>
-                                    NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。SEO対策の一貫としてSSRを採用しました。(Figmaからのコーディング)<br />
-                                    <Link href="https://github.com/nouzoehiroaki/metabach" target='_blank' rel='noopener noreferrer'>https://github.com/nouzoehiroaki/metabach</Link>
-                                </p>
-                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/metabach.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/metabach.png"
-                                                alt=""
-                                                width={700}
-                                                height={1441}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='ninja' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://ninjametavelive.com/" target='_blank' rel='noopener noreferrer'>
-                                        NINJAメタバライブ
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    HTML,CSS,jQuery,PHP / WordPress
-                                </p>
-                                <p className={styles.read}>
-                                    NFTマーケターのイケハヤ氏が立ち上げたNINJA DAO内のメタバース音楽ライブプロジェクトになります。
-                                    全ページコーディングとWordPressへの組み込みを担当しました。
-                                </p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/ninja.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/ninja.png"
-                                                alt=""
-                                                width={700}
-                                                height={394}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='tsumugi' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://www.tsumugi-craftbeer-minamikashiwa.com/" target='_blank' rel='noopener noreferrer'>
-                                        2階のクラフトビール屋つむぎ
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    Planning / Design / HTML,CSS,jQuery,PHP / WordPress
-                                </p>
-                                <p className={styles.read}>
-                                    近所にあるクラフトビール屋さんのWEBサイトをリニューアルしました。その際、Jimdoで取得された独自ドメインをXドメインに移管しました。(デザインカンプなしのコーディング)
-                                </p>
-                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/tsumugi.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/tsumugi.png"
-                                                alt=""
-                                                width={700}
-                                                height={3655}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='miraistyle' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://mirai-style.net/" target='_blank' rel='noopener noreferrer'>
-                                        ミライスタイル
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    HTML,CSS,javaScript,PHP / WordPress
-                                </p>
-                                <p className={styles.read}>
-                                    全ページのコーディング、下層ページのデザイン、そしてWordPressへの組み込みを担当しました。
-                                </p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/mirai.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/mirai.png"
-                                                alt=""
-                                                width={700}
-                                                height={394}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='okajimawood' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://www.okajimawood.co.jp/" target='_blank' rel='noopener noreferrer'>
-                                        恩加島木材工業株式会社
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    HTML,CSS,jQuery,PHP / WordPress
-                                </p>
-                                <p className={styles.read}>
-                                    TOPページのコーディング、Wordpressを担当しました。Luxyというjsプラグインを使用し、パララックスを実装しています。
-                                </p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/okajimawood.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/okajimawood.png"
-                                                alt=""
-                                                width={700}
-                                                height={394}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
-                        <div id='cando-house' className={styles.section}>
-                            <div className={`${styles.box} ${styles.left}`}>
-                                <h2>
-                                    <Link href="https://cando-house.co.jp/" target='_blank' rel='noopener noreferrer'>
-                                        感動ハウス
-                                    </Link>
-                                </h2>
-                                <p className={styles.skill}>
-                                    HTML,CSS,javaScript,PHP / WordPress
-                                </p>
-                                <p className={styles.read}>
-                                    全ページのコーディング、WordPressへの組み込みを担当しました。 郵便番号検索機能や来場希望日時のカレンダー表示機能、プラグイン無しでの検索機能等を実装。(Photoshopからのコーディング)
-                                </p>
-                                <p className={styles.foreword}>パソコン画面の中でスクロールしてみてください</p>
-                            </div>
-                            <div className={styles.box}>
-                                <div className={styles.moc}>
-                                    <div className={styles.view}>
-                                        <picture>
-                                            <source srcSet="/view/cando.webp" type="image/webp" />
-                                            <Image
-                                                src="/view/cando.png"
-                                                alt=""
-                                                width={700}
-                                                height={1441}
-                                            />
-                                        </picture>
-                                    </div>
-                                </div>
-                                <picture>
-                                    <source srcSet="/view/bg_sp_moc.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/bg_sp_moc.png"
-                                        alt=""
-                                        width={600}
-                                        height={144}
-                                        className={styles.plate}
-                                    />
-                                </picture>
-                            </div>
-                        </div>
+                    <div
+                        ref={sectionRef}
+                        className={styles.inner}
+                        style={{ '--slide-count': works.length } as React.CSSProperties}
+                    >
+                        {works.map((work) => (
+                            <WorkSlide key={work.id} work={work} />
+                        ))}
                     </div>
                 </div>
             </section>
@@ -458,52 +116,45 @@ const Slide: React.FC = () => {
                     <div className={styles.inner02}>
                         <div className={styles.section}>
                             <div className={styles.title02}>
-                                <span className="spanFour">
-                                    <h2>Artists Map</h2>
-                                    <p className={styles.skill}>
-                                        Next.js,TypeScript,SCSS / Vercel
-                                    </p>
-                                    <p>
-                                        <Link href="https://artist-map.kgetheshadowmen.com/" target='_blank' rel='noopener noreferrer'>
-                                            https://artist-map.kgetheshadowmen.com/
-                                        </Link>
-                                    </p>
-                                </span>
-
-                                <span className="spanFive">
-                                    <h2>謎アプリ</h2>
-                                    <p className={styles.skill}>
-                                        Next.js,SCSS,TypeScript / Vercel / Firebase
-                                    </p>
-                                    <p>
-                                        <Link href="https://login-app-sepia.vercel.app/" target='_blank' rel='noopener noreferrer'>
-                                            https://login-app-sepia.vercel.app/
-                                        </Link>
-                                    </p>
-                                </span>
+                                {featured.map((item, index) => (
+                                    <span
+                                        key={item.id}
+                                        ref={(el) => {
+                                            textRefs.current[index] = el;
+                                        }}
+                                    >
+                                        <h2>{item.title}</h2>
+                                        <p className={styles.skill}>{item.skills}</p>
+                                        <p>
+                                            <Link
+                                                href={item.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {item.url}
+                                            </Link>
+                                        </p>
+                                    </span>
+                                ))}
                             </div>
                             <div className={styles.images}>
-                                <picture>
-                                    <source srcSet="/view/j-artistMap.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/j-artistMap.png"
-                                        alt=""
-                                        width={700}
-                                        height={394}
-                                        className="imgFour"
-                                    />
-                                </picture>
-
-                                <picture>
-                                    <source srcSet="/view/login.webp" type="image/webp" />
-                                    <Image
-                                        src="/view/login.png"
-                                        alt=""
-                                        width={700}
-                                        height={394}
-                                        className="imgFive"
-                                    />
-                                </picture>
+                                {featured.map((item, index) => (
+                                    <picture key={item.id}>
+                                        <source
+                                            srcSet={`/view/${item.image.name}.webp`}
+                                            type="image/webp"
+                                        />
+                                        <Image
+                                            src={`/view/${item.image.name}.png`}
+                                            alt=""
+                                            width={item.image.width}
+                                            height={item.image.height}
+                                            ref={(el) => {
+                                                imageRefs.current[index] = el;
+                                            }}
+                                        />
+                                    </picture>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -512,4 +163,5 @@ const Slide: React.FC = () => {
         </>
     );
 };
+
 export default Slide;

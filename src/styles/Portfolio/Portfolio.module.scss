@@ -118,7 +118,8 @@
         overflow: hidden;
         .inner{
             height: 100vh;
-            width: 1100vw;
+            // スライド枚数は slide.tsx が --slide-count で渡します
+            width: calc(var(--slide-count, 9) * 100vw);
             display: flex;
             flex-direction: row;
             position: relative;

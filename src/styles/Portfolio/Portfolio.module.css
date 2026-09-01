@@ -122,7 +122,7 @@
 }
 .main .outer .inner {
   height: 100vh;
-  width: 1100vw;
+  width: calc(var(--slide-count, 9) * 100vw);
   display: flex;
   flex-direction: row;
   position: relative;
@@ -403,8 +403,7 @@
   width: 80%;
   height: auto;
   max-height: 60vh;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 @media (max-width: 800px) {
   .main .outer02 .inner02 .section .images img {

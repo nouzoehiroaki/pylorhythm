@@ -110,13 +110,13 @@
     margin: 0 auto 30px;
   }
 }
-.main .section .box .flex .listBox {
-  text-align: justify;
-}
 @media (min-width: 768px) {
   .main .section .box .flex .listBox {
     width: 70%;
   }
+}
+.main .section .box .flex .listBox {
+  text-align: justify;
 }
 .main .section .box .flex .listBox dl {
   display: flex;

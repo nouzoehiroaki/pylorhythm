@@ -7,8 +7,7 @@
 img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 a {
@@ -32,6 +31,5 @@ a {
 .imgWrap img {
   width: 100%;
   height: auto !important;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }/*# sourceMappingURL=globals.css.map */
