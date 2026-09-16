@@ -481,7 +481,7 @@ const Profile: React.FC = () => {
                                         <dt>開発プロセス</dt>
                                         <dd>アジャイル・スクラム（1週間スプリント）/ 要件定義・設計書作成 / テスト仕様書作成 / リリース手順書・バックアウト対応</dd>
                                         <dt>OS</dt>
-                                        <dd>macOS（11年）/ Windows（3年）</dd>
+                                        <dd>macOS（実務7年4カ月）/ Windows（3年）/ Linux（Docker・Kubernetes・Cloud Run 等のコンテナ環境、AWS EC2 の運用）</dd>
                                         <dt>保有資格</dt>
                                         <dd>普通自動車運転免許 / ヘルパー2級 / 福祉用具専門相談員</dd>
                                     </dl>

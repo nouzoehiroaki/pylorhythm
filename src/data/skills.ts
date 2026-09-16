@@ -37,7 +37,7 @@ export const skills: Skill[] = [
         name: 'フロントエンド実装',
         short: 'フロントエンド',
         level: 5,
-        note: '11年、全案件の主務。Nuxt.js / Next.js / React / Vue と TypeScript。実装だけでなく、コンポーネント設計指針やレビュー観点の策定まで担当してきた領域です。',
+        note: '全案件の主務。Nuxt.js / Next.js / React / Vue と TypeScript。実装だけでなく、コンポーネント設計指針やレビュー観点の策定まで担当してきた領域です。',
     },
     {
         name: '生成AI活用開発',
