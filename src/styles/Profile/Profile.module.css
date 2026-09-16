@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;500;700&display=swap");
 .canvas {
   position: fixed;
@@ -61,6 +62,22 @@
 @media (max-width: 574px) {
   .main .section h2 span {
     font-size: 1rem;
+  }
+}
+.main .section h2 span.en {
+  display: inline-block;
+  margin: 0 0 0 14px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  opacity: 0.65;
+  vertical-align: middle;
+}
+@media (max-width: 574px) {
+  .main .section h2 span.en {
+    display: block;
+    margin: 6px 0 0;
+    font-size: 0.7rem;
   }
 }
 .main .section p {
@@ -139,6 +156,158 @@
     width: 100%;
   }
 }
+.main .section .lead {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+@media (max-width: 574px) {
+  .main .section .lead {
+    font-size: 17px;
+  }
+}
+.main .section .subhead {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 28px 0 8px;
+  padding-left: 10px;
+  border-left: 3px solid rgba(255, 255, 255, 0.7);
+}
+.main .section .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+@media (max-width: 991px) {
+  .main .section .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .main .section .cards {
+    grid-template-columns: 1fr;
+  }
+}
+.main .section .cards .card {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.main .section .cards .card p {
+  text-align: left;
+}
+.main .section .cards .card .cardValue {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.main .section .cards .card .cardLabel {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.main .section .cards .card .cardNote {
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+.main .section .works {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 24px;
+}
+.main .section .works .work {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.main .section .works .work p {
+  text-align: left;
+}
+.main .section .works .work .workHead {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.main .section .works .work .workHead .term {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.main .section .works .work .workHead .role {
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+  padding: 3px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.main .section .works .work .workTitle {
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+@media (max-width: 574px) {
+  .main .section .works .work .workTitle {
+    font-size: 16px;
+  }
+}
+.main .section .works .work .meta {
+  font-size: 13px;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+.main .section .works .work ul {
+  margin-bottom: 14px;
+}
+.main .section .works .work ul li {
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: left;
+  list-style: none;
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.main .section .works .work ul li::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+}
+.main .section .works .work .stack {
+  font-size: 12px;
+  line-height: 1.9;
+  opacity: 0.8;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
 .main .section .skillSheetDl a {
   text-decoration: underline;
   margin-top: 10px;
@@ -168,4 +337,187 @@
   background: #f0f5f2;
   color: #494646;
   border: 1px solid #494646;
+}
+
+/* ===== スキルマップ（レーダー＋レベルメーター） ===== */
+.skillMap {
+  margin-top: 24px;
+}
+
+.skillLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 1px #333;
+}
+.skillLegend span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.skillLegend b {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.skillBody {
+  display: grid;
+  grid-template-columns: minmax(320px, 46%) 1fr;
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 991px) {
+  .skillBody {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.skillChart {
+  /* 一覧が長いので、スクロール中もチャートが視界に残るようにする */
+  position: sticky;
+  top: 12vh;
+  align-self: start;
+}
+@media (max-width: 991px) {
+  .skillChart {
+    position: static;
+  }
+}
+.skillChart svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.skillChart {
+  /* レーダーは小さい画面だと読めないため、一覧のメーターに任せる */
+}
+@media (max-width: 640px) {
+  .skillChart {
+    display: none;
+  }
+}
+
+.radarGrid {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 1;
+}
+
+.radarAxis {
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 1;
+}
+
+.radarArea {
+  fill: #fff;
+  fill-opacity: 0.18;
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.radarDot {
+  fill: #fff;
+  stroke: rgba(0, 0, 0, 0.45);
+  stroke-width: 2;
+}
+
+.radarLabel {
+  fill: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, 0.55);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.radarLevel {
+  font-size: 13px;
+  font-weight: 700;
+  fill: rgba(255, 255, 255, 0.75);
+}
+
+.skillList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.skillList li {
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.skillList li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.skillHead {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skillName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
+}
+
+.skillLv {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 1px 1px 1px #333;
+}
+
+.skillMeter {
+  display: flex;
+  gap: 3px;
+  margin: 6px 0 7px;
+}
+.skillMeter i {
+  display: block;
+  width: 26px;
+  height: 7px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.18);
+}
+.skillMeter i.on {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.skillNote {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #fff;
+  opacity: 0.85;
+  text-shadow: 1px 1px 1px #333;
+}
+
+.skillFoot {
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  text-shadow: 1px 1px 1px #333;
 }/*# sourceMappingURL=Profile.module.css.map */

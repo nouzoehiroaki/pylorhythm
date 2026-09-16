@@ -318,3 +318,161 @@
         }
     }
 }
+/* ===== スキルマップ（レーダー＋レベルメーター） ===== */
+.skillMap {
+    margin-top: 24px;
+}
+.skillLegend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 1px #333;
+    span {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+    b {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 18px;
+        height: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+    }
+}
+.skillBody {
+    display: grid;
+    grid-template-columns: minmax(320px, 46%) 1fr;
+    gap: 28px;
+    align-items: start;
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+.skillChart {
+    /* 一覧が長いので、スクロール中もチャートが視界に残るようにする */
+    position: sticky;
+    top: 12vh;
+    align-self: start;
+    @media (max-width: 991px) {
+        position: static;
+    }
+    svg {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+    /* レーダーは小さい画面だと読めないため、一覧のメーターに任せる */
+    @media (max-width: 640px) {
+        display: none;
+    }
+}
+.radarGrid {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.22);
+    stroke-width: 1;
+}
+.radarAxis {
+    stroke: rgba(255, 255, 255, 0.22);
+    stroke-width: 1;
+}
+.radarArea {
+    fill: #fff;
+    fill-opacity: 0.18;
+    stroke: #fff;
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+}
+.radarDot {
+    fill: #fff;
+    stroke: rgba(0, 0, 0, 0.45);
+    stroke-width: 2;
+}
+.radarLabel {
+    fill: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    paint-order: stroke;
+    stroke: rgba(0, 0, 0, 0.55);
+    stroke-width: 3;
+    stroke-linejoin: round;
+}
+.radarLevel {
+    font-size: 13px;
+    font-weight: 700;
+    fill: rgba(255, 255, 255, 0.75);
+}
+.skillList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    li {
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+    }
+}
+.skillHead {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.skillName {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 1px #333;
+}
+.skillLv {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 1px 1px 1px #333;
+}
+.skillMeter {
+    display: flex;
+    gap: 3px;
+    margin: 6px 0 7px;
+    i {
+        display: block;
+        width: 26px;
+        height: 7px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.18);
+        &.on {
+            background: rgba(255, 255, 255, 0.92);
+        }
+    }
+}
+.skillNote {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #fff;
+    opacity: 0.85;
+    text-shadow: 1px 1px 1px #333;
+}
+.skillFoot {
+    margin-top: 18px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    text-shadow: 1px 1px 1px #333;
+}
