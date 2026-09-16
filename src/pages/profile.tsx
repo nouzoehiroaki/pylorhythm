@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitType from 'split-type';
+import SkillRadar from '@/components/SkillRadar';
 import styles from '@/styles/Profile/Profile.module.scss';
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -380,7 +381,7 @@ const Profile: React.FC = () => {
                                     2019年8月にWeb制作事業「ピロリズム（PYLORHYTHM）」を立ち上げ、WordPressのフルスクラッチ開発で100社超のコーポレートサイト・LPを制作しました。要件定義から公開・運用保守・外注管理までをワンストップで担い、表示速度とSEOで具体的な成果を出しています。
                                 </p>
                                 <p className={styles.mini}>
-                                    2021年以降はTypeScriptによるReact / Next.js・Nuxt.js開発へ軸足を移し、2023年11月からは東証グロース上場のIT企業に所属してSES契約で参画。ユーザー数万規模の顧客業務システムのフロントエンド新規開発・運用保守を担当し、仕様が固まっていない新規事業の申込フォームでは要整理から仕様策定・実装・リリースまでを主導しました。
+                                    2023年以降はTypeScriptによるReact / Next.js・Nuxt.js開発へ軸足を移し、同年11月からは東証グロース上場のIT企業に所属してSES契約で参画。ユーザー数万規模の顧客業務システムのフロントエンド新規開発・運用保守を担当し、仕様が固まっていない新規事業の申込フォームでは要件整理から仕様策定・実装・リリースまでを主導しました。
                                 </p>
                                 <p className={styles.mini}>
                                     2025年10月からはフリーランスとして、大手通信事業者が提供するスマホ完結型カードローンサービスのフロントエンド開発および申込基盤構築に従事しています。Kubernetes / ArgoCD による環境運用、AEMでのコンテンツ管理、Datadogでのログ監視まで踏み込みつつ、Claude Codeを用いた開発・運用の自動化にも取り組んでいます。
@@ -498,6 +499,12 @@ const Profile: React.FC = () => {
                                     <p className={styles.cardNote}>{item.note}</p>
                                 </div>
                             ))}
+                        </div>
+                    </section>
+                    <section className={styles.section}>
+                        <h2>スキルマップ<span className={styles.en}>SKILL MAP</span></h2>
+                        <div className='message'>
+                            <SkillRadar />
                         </div>
                     </section>
                     <section className={styles.section}>
