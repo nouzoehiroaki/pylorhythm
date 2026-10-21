@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '@/styles/Portfolio/Portfolio.module.scss';
@@ -11,7 +11,6 @@ gsap.config({
     nullTargetWarn: false,
 });
 const Portfolio: React.FC = () => {
-    const pinRef = useRef(null);
     //見出し h1 出現
     useEffect(() => {
         const text = SplitType.create('.title');

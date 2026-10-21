@@ -6,18 +6,18 @@ import Image from 'next/image';
 const Test: React.FC = () => {
     
     useEffect(() =>{
-        let imagesItems = Array.from(document.querySelectorAll(".imgWrap"));
-        let title = Array.from(document.querySelectorAll(".title"));
-        let message = Array.from(document.querySelectorAll(".message"));
+        const imagesItems = Array.from(document.querySelectorAll(".imgWrap"));
+        const title = Array.from(document.querySelectorAll(".title"));
+        const message = Array.from(document.querySelectorAll(".message"));
         console.log(imagesItems);
         console.log(title);
 
         //具体的にいつ発動させるのかを決めるオプション
-        let options = {
+        const options = {
             rootMargin: "0px", //デフォルトで０.marginとほぼ同じ。
             threshold: 0.2, // 閾値は0.2。これが１になると完全に画面におさまってから発動する
         };
-        let setItemActive = (entries: IntersectionObserverEntry[]) =>{
+        const setItemActive = (entries: IntersectionObserverEntry[]) =>{
             console.log(entries);
             entries.map((entry) => {
                 if (entry.isIntersecting) {
@@ -27,7 +27,7 @@ const Test: React.FC = () => {
                 }
             });
         };
-        let observer = new IntersectionObserver(setItemActive, options); //交差の監視して、閾値を過ぎたらコールバック関数が呼ばれる
+        const observer = new IntersectionObserver(setItemActive, options); //交差の監視して、閾値を過ぎたらコールバック関数が呼ばれる
         imagesItems.forEach((item) => {
             observer.observe(item);
         });

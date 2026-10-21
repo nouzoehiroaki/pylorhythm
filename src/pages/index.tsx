@@ -163,7 +163,7 @@ const Home: React.FC = () => {
             const clock = new THREE.Clock();
             const animate = () =>{
                 renderer.render(scene,camera);
-                let getDeltaTime = clock.getDelta();
+                const getDeltaTime = clock.getDelta();
                 //メッシュを回転
                 for (const mesh of meshes) {
                     mesh.rotation.x += 0.1 * getDeltaTime;
