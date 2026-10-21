@@ -81,7 +81,7 @@ const Home: React.FC = () => {
 
             //Fonts
             const fontLoader = new FontLoader();
-            fontLoader.load("./fonts/helvetiker_regular.typeface.json", (font) => {
+            fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
                 let textSize = 0.3;
                 let textHeight = 0.2;
                 if (window.innerWidth <= 768) {
