@@ -81,7 +81,7 @@ const Home: React.FC = () => {
 
             //Fonts
             const fontLoader = new FontLoader();
-            fontLoader.load("./fonts/helvetiker_regular.typeface.json", (font) => {
+            fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
                 let textSize = 0.3;
                 let textHeight = 0.2;
                 if (window.innerWidth <= 768) {
@@ -163,7 +163,7 @@ const Home: React.FC = () => {
             const clock = new THREE.Clock();
             const animate = () =>{
                 renderer.render(scene,camera);
-                let getDeltaTime = clock.getDelta();
+                const getDeltaTime = clock.getDelta();
                 //メッシュを回転
                 for (const mesh of meshes) {
                     mesh.rotation.x += 0.1 * getDeltaTime;
